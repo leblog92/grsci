@@ -1,0 +1,42 @@
+<!document html>
+<html lang="fr">
+<head>
+<title>Catalogue</title>
+<script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+</head>
+<body>
+<div style="text-align:center;font-family;font-family:Consolas">
+<h3>Résultats de recherche</h3><br><a href="https://catalogue.mediatheque-rueilmalmaison.fr/notice?id=p%3A%3Ausmarcdef_0000309904&posInSet=1&queryId=c0fac281-a52e-4507-9899-3214508a77e9">Lien document n°1</a><br><br>
+<a href="https://catalogue.mediatheque-rueilmalmaison.fr/notice?id=p%3A%3Ausmarcdef_0000305020&posInSet=2&queryId=c0fac281-a52e-4507-9899-3214508a77e9">Lien document n°2</a><br><br>
+<a href="https://catalogue.mediatheque-rueilmalmaison.fr/notice?id=p%3A%3Ausmarcdef_0000213630&posInSet=3&queryId=c0fac281-a52e-4507-9899-3214508a77e9">Lien document n°3</a><br><br>
+<a href="https://catalogue.mediatheque-rueilmalmaison.fr/notice?id=p%3A%3Ausmarcdef_0000213630&posInSet=3&queryId=c0fac281-a52e-4507-9899-3214508a77e9">Lien document n°4</a>
+</div>
+
+<script>
+jQuery('body').prepend('<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet"><style>#div0{position:fixed;z-index:10000;overflow-y:scroll;right:0;top:40px;background-color:rgba(0,129,178,1);width:270px;height:auto;padding:10px;margin:10px;border-radius:4px;color:#fff;font-family:"Roboto Mono",monospace;box-shadow: 0px 1px 6px 0px rgba(0, 0, 0, 0.12),0px 1px 4px 0px rgba(0, 0, 0, 0.12);}#div0::-webkit-scrollbar{display: none;}</style><div id="div0" style="" contenteditable="true"><h3>👉GRSCI™</h3>Générateur de Requête de Sélection sur Catalogue InMedia<hr>Pour créer votre séléction survolez les titres des documents pour générer la requête \'LocalNumber:000\' avec l\'opérateur \'OR\'. Ne fonctionne pas avec les ressources en ligne.<br><br></div>');
+$(document).ready(function(){
+var div0=document.getElementById("div0");
+var arr0=[];
+$(document).on('mouseenter','a',function(){
+var ark0=$(this).attr("href");
+if(~ark0.indexOf("/notice?id=p%3A%3Ausmarcdef_")){
+//ark0=ark0.slice(75);
+ark0=ark0.slice(28);
+ark0=ark0.substring(0,10);
+if(arr0==""){
+div0.setAttribute("contenteditable","true");
+arr0.push("LocalNumber:"+ark0);
+}else{
+if(~arr0.toString().indexOf(ark0)){
+return;
+}else{
+arr0.push(" OR LocalNumber:"+ark0);
+}
+}
+$(div0).html(arr0);
+}
+});
+});
+</script>
+</body>
+</html>
