@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<title>Label Editor v1</title>
+		<link rel="icon" type="image/png" href="https://em-content.zobj.net/thumbs/120/microsoft/319/label_1f3f7-fe0f.png" />
+		<style>
+		html,body{
+			height:100%;
+			margin:0;
+		}
+		body{
+			font-family:arial;
+		}
+		svg{
+			border:1px solid #999;
+			background:#fff;
+		}
+		#div1{
+			position:fixed;
+			top:10px;
+			right:10px;
+			border-radius:5px;
+			border:1px solid #999;
+			padding:10px;
+			background:#fff;
+			box-shadow:0px 1px 6px 0px rgba(0, 0, 0, 0.12), 0px 1px 4px 0px rgba(0, 0, 0, 0.12);
+		}
+		@media print{
+			.no-print,.no-print *{display: none !important;}
+		}
+		@page{
+			margin:0;
+		}
+		</style>
+	</head>
+	<body>
+		<svg id="paper" width="210mm" height="297mm" viewbox="0 0 210 297">
+			<defs>
+				<g id="label1">
+					<rect width="20" height="16" stroke="#f00" stroke-width="0.2" fill="none"></rect>
+						<g transform="translate(2.5 8)">
+							<g transform="rotate(-90 0 0)">
+								<text x="0" y="0" font-size="2" fill="#f00" dominant-baseline="middle" text-anchor="middle">CONTIENT</text>
+							</g>
+						</g>
+					<path d="m5 0L5 16" stroke="#f00" stroke-width="0.2" fill="none"/>
+					<text id="svg_text1" x="12.5" y="8" font-size="3" fill="#f00" dominant-baseline="middle" text-anchor="middle">2 DVD</text>
+				</g>
+			</defs>
+			<g id="g1">
+			</g>
+		</svg>
+		<div id="div1" class="no-print">
+			<label for="text1">👉 Libellé : </label>
+			<input type="text" id="text1" required maxlength="7" size="9" value="2 DVD">
+			<button onclick="window.print()">Imprimer</button>
+		</div>
+		<script>
+			var g1=document.getElementById("g1");
+			var div1=document.getElementById("div1");
+			var text1=document.getElementById("text1");
+			var svg_text1=document.getElementById("svg_text1");
+			var x=6;
+			var y=5;
+			function write1(){
+			g1.innerHTML='';
+				for (var i=0;i<=143;i++){
+					g1.innerHTML+='<use xlink:href="#label1" x="'+x+'" y="'+y+'"/>';
+					x=x+22;
+					if(x+20>210){x=6;y=y+18;}
+				}
+			}
+			write1();
+			text1.onchange=function(){
+				var input_text1=text1.value;
+				svg_text1.innerHTML=input_text1;
+				anim1.setAttribute("repeatCount",1);
+			}
+		</script>
+	</body>
+</html>
