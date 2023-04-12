@@ -2,9 +2,10 @@
 <html lang="fr">
   <head>
     <meta charset="utf-8">
-    <link rel="icon" type="image/png" href="https://em-content.zobj.net/thumbs/160/twitter/322/japanese-dolls_1f38e.png" />
-    <title>Pantin</title>
+    <link rel="icon" type="image/png" href="https://em-content.zobj.net/thumbs/160/microsoft/135/skull_1f480.png" />
+    <title>Yoga Pose Generator</title>
     <style>
+	*{transition:0.5s;}
 	html,body{
 		height:100%;
 		margin:0;
@@ -43,8 +44,8 @@
   <label for="vani6">genou gauche </label><input id="vani6" type="number"  min="-360" max="360" value="0"><br><br>
   <label for="vani7">aine droite </label><input id="vani7" type="number"  min="-360" max="360" value="0"><br><br>
   <label for="vani8">genou droit </label><input id="vani8" type="number"  min="-360" max="360" value="0"><br><br>
-  <label for="vdur">durée </label><input id="vdur" type="number" step="0.01" min="0.01" max="60" value="2"><br><br>
-  <a href="index.html">Back</a>
+  <label for="vdur">durée </label><input id="vdur" type="number" step="0.1" min="0.5" max="60" value="2"><br><br>
+  <span onclick="alea()">Random</span> - <a href="index.html">Back</a>
   </div>
     <svg width="50%" height="auto" viewBox="0 0 500 500">
 <g transform="translate(0 -75)">
@@ -106,14 +107,28 @@
 <script>
 var angle=0;
 var dur=2;
+var pom;
+
 function change(){
   for(var i=1;i<9;i++){
-  angle=document.getElementById("vani"+i).value;
-  dur=document.getElementById("vdur").value;
-  document.getElementById("anim"+i).setAttribute("values","0 0 0;"+angle+" 0 0;0 0 0");
-  document.getElementById("anim"+i).setAttribute("dur",dur+"s");
+	  angle=document.getElementById("vani"+i).value;
+	  dur=document.getElementById("vdur").value;
+	  document.getElementById("anim"+i).setAttribute("values","0 0 0;"+angle+" 0 0;0 0 0");
+	  document.getElementById("anim"+i).setAttribute("dur",dur+"s");
   }
 }
+
+function alea(){
+	for(var i=1;i<9;i++){
+		pom=Math.round(Math.random());
+		if(pom>0){pom="";}else{pom="-";}
+		document.getElementById("vani"+i).value=pom+Math.round(Math.random()*360);
+		angle=document.getElementById("vani"+i).value;
+		console.log(pom);
+		document.getElementById("anim"+i).setAttribute("values","0 0 0;"+angle+" 0 0;0 0 0");
+	}
+}
+
 </script>
 </html>
 
