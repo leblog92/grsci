@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="icon" type="image/png" href="https://em-content.zobj.net/thumbs/160/twitter/322/japanese-dolls_1f38e.png" />
+    <title>Pantin</title>
+    <style>
+	html,body{
+		height:100%;
+		margin:0;
+	}
+	body{
+		overflow:hidden;
+		background:#333;
+	}
+    svg {
+        border: 1px solid #333;
+		background-color:#fff;
+    }
+    </style>
+  </head>
+  <body onclick="change()">
+  <!-- images à 40%-->
+    <svg width="50%" height="auto" viewBox="0 0 500 500">
+<g transform="translate(0 -75)">
+      <g transform="translate(250 250)">
+        <image xlink:href="tronc.png" width="80" height="160" x="-40" y="-80" opacity="1" />
+      </g>
+      <g transform="translate(230 316)">
+        <g>
+          <image xlink:href="cui.png" width="28" height="88" x="-21" y="-7" opacity="1" />
+          <animateTransform id="anim5" attributeName="transform" attributeType="xml" type="rotate" values="0 0 0;0 0 0;0 0 0" begin="0s" dur="2s" repeatCount="indefinite" />
+          <g transform="translate(-14 75)">
+            <g>
+              <image xlink:href="pie.png" width="31" height="90" x="-21" y="-5" opacity="1" />
+              <animateTransform id="anim6" attributeName="transform" attributeType="xml" type="rotate" values="0 0 0;0 0 0;0 0 0" begin="0s" dur="2s" repeatCount="indefinite" />
+            </g>
+          </g>
+        </g>
+      </g>
+      <g transform="translate(269 317)">
+        <g>
+          <image xlink:href="cui2.png" width="28" height="88" x="-6" y="-6" opacity="1" />
+          <animateTransform id="anim7" attributeName="transform" attributeType="xml" type="rotate" values="0 0 0;0 0 0;0 0 0" begin="0s" dur="2s" repeatCount="indefinite" />
+          <g transform="translate(13 77)">
+            <g>
+              <image xlink:href="pie2.png" width="31" height="90" x="-9" y="-5" opacity="1" />
+              <animateTransform id="anim8" attributeName="transform" attributeType="xml" type="rotate" values="0 0 0;0 0 0;0 0 0" begin="0s" dur="2s" repeatCount="indefinite" />
+            </g>
+          </g>
+        </g>
+      </g>
+	        <g transform="translate(215 237)">
+        <g>
+          <image xlink:href="avbr.png" width="23" height="72" x="-15" y="-7" opacity="1"/>
+          <animateTransform id="anim1" attributeName="transform" attributeType="xml" type="rotate" values="0 0 0;0 0 0;0 0 0" begin="0s" dur="2s" repeatCount="indefinite" />
+          <g transform="translate(-8 60)">
+            <g>
+              <image xlink:href="br.png" width="27" height="76" x="-7" y="-5" opacity="1" />
+              <animateTransform id="anim2" attributeName="transform" attributeType="xml" type="rotate" values="0 0 0;0 0 0;0 0 0" begin="0s" dur="2s" repeatCount="indefinite" />
+            </g>
+          </g>
+        </g>
+      </g>
+      <g transform="translate(283 235)">
+        <g>
+          <image xlink:href="avbr2.png" width="23" height="72" x="-8" y="-7" opacity="1" />
+          <animateTransform id="anim3" attributeName="transform" attributeType="xml" type="rotate" values="0 0 0;0 0 0;0 0 0" begin="0s" dur="2s" repeatCount="indefinite" />
+          <g transform="translate(7 60)">
+            <g>
+              <image xlink:href="br2.png" width="27" height="76" x="-19" y="-5" opacity="1" />
+              <animateTransform id="anim4" attributeName="transform" attributeType="xml" type="rotate" values="0 0 0;0 0 0;0 0 0" begin="0s" dur="2s" repeatCount="indefinite" />
+            </g>
+          </g>
+        </g>
+      </g>
+</g>
+    </svg>
+  </body>
+
+<script>
+function change(){
+  for(var i=1;i<9;i++){
+  var pom=Math.round(Math.random());
+  if(pom>0){pom="";}else{pom="-";}
+  document.getElementById("anim"+i).setAttribute("values","0 0 0;"+pom+Math.round(Math.random()*360)+" 0 0;0 0 0");
+  document.getElementById("anim"+i).setAttribute("dur",Math.round(Math.random()*12)+"s");
+  }
+}
+</script>
+</html>
+
