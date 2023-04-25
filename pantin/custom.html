@@ -5,7 +5,6 @@
     <link rel="icon" type="image/png" href="https://em-content.zobj.net/thumbs/160/microsoft/135/skull_1f480.png" />
     <title>Yoga Pose Generator</title>
     <style>
-	<!-- *{transition:0.5s;} -->
 	html,body{
 		height:100%;
 		margin:0;
@@ -124,8 +123,9 @@ function alea(){
 		if(pom>0){pom="";}else{pom="-";}
 		document.getElementById("vani"+i).value=pom+Math.round(Math.random()*360);
 		angle=document.getElementById("vani"+i).value;
-		console.log(pom);
 		document.getElementById("anim"+i).setAttribute("values","0 0 0;"+angle+" 0 0;0 0 0");
+		dur=document.getElementById("vdur").value;
+		document.getElementById("anim"+i).setAttribute("dur",dur+"s");
 	}
 }
 
