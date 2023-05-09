@@ -8,37 +8,50 @@
 	<body>
 		<div style="text-align:center;font-family;font-family:Consolas">
 			<br><br><h3>Résultats de recherche</h3><br>
-			<a href="https://catalogue.mediatheque-rueilmalmaison.fr/notice?id=p%3A%3Ausmarcdef_0000386268&posInSet=3&queryId=d171d920-6645-4d99-9679-90f8139d3593">Lien document n°1</a><br><br>
-			<a href="https://catalogue.mediatheque-rueilmalmaison.fr/notice?id=p%3A%3Ausmarcdef_0000322821&posInSet=2&queryId=b78a8fb8-dba0-49b4-ae4f-d501455d352e">Lien document n°2</a><br><br>
-			<a href="https://catalogue.mediatheque-rueilmalmaison.fr/notice?id=p%3A%3Ausmarcdef_0000391621&posInSet=6&queryId=468cbe5e-e1c5-4f0b-8bc5-8e718aa006a2">Lien document n°3</a><br><br>
-			<a href="https://catalogue.mediatheque-rueilmalmaison.fr/notice?id=p%3A%3Ausmarcdef_0000400050&posInSet=4&queryId=9a2935d1-e176-4769-aa8d-5b16ee559ab0">Lien document n°4</a><br><br><br>
+			<a href="https://catalogue.mediatheque-rueilmalmaison.fr/notice?id=p%3A%3Ausmarcdef_0000386268&posInSet=3&queryId=d171d920-6645-4d99-9679-90f8139d3593" title="Titre document 1">Lien document n°1</a><br><br>
+			<a href="https://catalogue.mediatheque-rueilmalmaison.fr/notice?id=p%3A%3Ausmarcdef_0000322821&posInSet=2&queryId=b78a8fb8-dba0-49b4-ae4f-d501455d352e" title="Titre document 2">Lien document n°2</a><br><br>
+			<a href="https://catalogue.mediatheque-rueilmalmaison.fr/notice?id=p%3A%3Ausmarcdef_0000391621&posInSet=6&queryId=468cbe5e-e1c5-4f0b-8bc5-8e718aa006a2" title="Titre document 3">Lien document n°3</a><br><br>
+			<a href="https://catalogue.mediatheque-rueilmalmaison.fr/notice?id=p%3A%3Ausmarcdef_0000400050&posInSet=4&queryId=9a2935d1-e176-4769-aa8d-5b16ee559ab0" title="Titre document 4">Lien document n°4</a><br><br><br>
 			<a href="https://leblog92.github.io/grsci">Retour</a> - <a href="https://catalogue.mediatheque-rueilmalmaison.fr/">Catalogue</a>
 		</div>
 		<script>
-			jQuery('body').prepend('<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet"><style>#div0{position:fixed;z-index:10000;overflow-y:scroll;right:0;scrollbar-width: none;top:40px;background-color:rgba(0,129,178,1);width:270px;height:auto;padding:10px;margin:10px;border-radius:4px;color:#fff;font-family:"Roboto Mono",monospace;box-shadow: 0px 1px 6px 0px rgba(0, 0, 0, 0.12),0px 1px 4px 0px rgba(0, 0, 0, 0.12);}#div0::-webkit-scrollbar{display: none;}</style><div id="div0" style="" contenteditable="false"><h3>👉GRSCI™</h3>Générateur de Requête de Sélection sur <a style="color:white;text-decoration: none;" href="https://catalogue.mediatheque-rueilmalmaison.fr/" target="_blank"><u>Catalogue InMedia</u></a><hr style="border:1px solid white;">Pour créer votre séléction survolez les titres des documents pour générer la requête \'LocalNumber:00000\' avec l\'opérateur \'OR\'. Ne fonctionne pas avec les ressources en ligne.<br><br></div>');
-			$(document).ready(function(){
-				var div0=document.getElementById("div0");
-				var arr0=[];
+			var div0=document.getElementById('div0');
+			if(!div0){
+				jQuery('body').prepend('<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet"><style>#div0{position:fixed;z-index:10000;overflow-y:scroll;right:0;scrollbar-width: none;top:40px;background-color:rgba(0,129,178,1);width:270px;height:auto;padding:10px;margin:10px;border-radius:4px;color:#fff;font-family:"Roboto Mono",monospace;box-shadow: 0px 1px 6px 0px rgba(0, 0, 0, 0.12),0px 1px 4px 0px rgba(0, 0, 0, 0.12);}#div0::-webkit-scrollbar{display: none;}#div1{position:fixed;z-index:10000;overflow-y:scroll;left:0;scrollbar-width: none;top:40px;background-color:rgba(0,129,178,1);width:270px;height:auto;padding:10px;margin:10px;border-radius:4px;color:#fff;font-family:"Roboto Mono",monospace;box-shadow: 0px 1px 6px 0px rgba(0, 0, 0, 0.12),0px 1px 4px 0px rgba(0, 0, 0, 0.12);}#div1::-webkit-scrollbar{display: none;}</style><div id="div0" style="" contenteditable="false"><h3>👉GRSCI™ v3</h3>Générateur de Requête de Sélection sur <a style="color:white;text-decoration:none;" href="https://catalogue.mediatheque-rueilmalmaison.fr/" target="_blank"><u>Catalogue InMedia</u></a><hr style="border-top:0.1px solid white;">Pour créer votre séléction survolez les titres des documents pour générer la requête \'LocalNumber:####\' avec l\'opérateur \'OR\'. Ne fonctionne pas avec les ressources en ligne.<br><br></div><div id="div1" style="" contenteditable="false"></div>');	
+				$(document).ready(function(){
+					var origin=window.location.origin;
+					var div0=document.getElementById("div0");
+					var div1=document.getElementById("div1");
+					var arr0=[];
+					var arr1=[];
 					$(document).on('mouseenter','a',function(){
-					var ark0=$(this).attr("href");
+						var ark0=$(this).attr("href");
+						var ark1=$(this).attr("title");
 						if(~ark0.indexOf("/notice?id=p%3A%3Ausmarcdef_")){
-						ark0=ark0.slice(75);
-						//ark0=ark0.slice(28);
-						ark0=ark0.substring(0,10);
-						if(arr0==""){
-							div0.setAttribute("contenteditable","true");
-							arr0.push("LocalNumber:"+ark0);
-						}else{
-							if(~arr0.toString().indexOf(ark0)){
-								return;
+							if(origin=="https://catalogue.mediatheque-rueilmalmaison.fr"){ark0=ark0.slice(28);}else{ark0=ark0.slice(75);}
+							ark0=ark0.substring(0,10);
+							ark1=ark1.substring(0,24);
+							ark1=ark1.replace('"','\"');
+							ark1=ark1.replace("'","\'");
+							if(arr0==""){
+								div0.setAttribute("contenteditable","true");
+								div1.setAttribute("contenteditable","true");
+								arr0.push("LocalNumber:"+ark0);
+								arr1.push(ark1+"<br>");
 							}else{
-								arr0.push(" OR LocalNumber:"+ark0);
+								if(~arr0.toString().indexOf(ark0)){
+									return;
+								}else{
+									arr0.push(" OR LocalNumber:"+ark0);
+									arr1.push(ark1+"<br>");
+								}
 							}
+							$(div0).html(arr0);
+							$(div1).html(arr1);
 						}
-						$(div0).html(arr0);
-					}
+					});
 				});
-			});
+			}
 		</script>
 	</body>
 </html>
