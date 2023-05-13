@@ -39,13 +39,18 @@ if($("#div0").length==0){
 		});
 
 		$("#div3").on("click",function(){
+			$("#div0").html('<img style="border-radius:4px;" src="https://leblog92.github.io/grsci/jedi.gif"/>');
+			$("#div1").html('<img style="border-radius:4px;" src="https://leblog92.github.io/grsci/jedi.gif"/>');
+			$("#div5").attr("style","bottom:-60px");
 			arr0=[];
 			arr1=[];
 			n=0;
-			$("#div0").html("“Échouer, c'est avoir la possibilité de recommencer de manière plus intelligente.”<br><div style=\"text-align:right\">- Henry Ford</div>");
-			$("#div1").html("“Recommencer, ce n’est pas refaire.”<br><div style=\"text-align:right\">- César</div>");
-			$("#div4").html(n+" document");
-			$("#div5").attr("style","bottom:-60px");
+			setTimeout(function(){
+				$("#div0").html("“Ce ne sont pas ces documents que vous recherchez.”<br><div style=\"text-align:right\">- Obi-Wan Kenobi</div>");
+				$("#div1").html("“Ce ne sont pas ces documents que vous recherchez.”<br><div style=\"text-align:right\">- Obi-Wan Kenobi</div>");
+				$("#div4").html(n+" document");
+			},1920);
+			
 		});
 
 		$("#div5").on("click",function(){
