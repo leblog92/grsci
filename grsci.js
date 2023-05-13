@@ -6,7 +6,7 @@ if(!div0){
 		var div0=document.getElementById("div0");
 		var div1=document.getElementById("div1");
 		var div2=document.getElementById("div2");
-		var boom="<img width=\"250px\" src=\"https://leblog92.github.io/grsci/boom.webp\"/>";
+		var boom="<img width=\"250px\" src=\"https://leblog92.github.io/grsci/boom.gif\"/>";
 		var arr0=[];
 		var arr1=[];
 		var shown=true;
