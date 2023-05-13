@@ -67,7 +67,7 @@ if($("#div0").length==0){
 				}
 				if(arr0.length===0){
 					$("#div0").html("“Échouer, c'est avoir la possibilité de recommencer de manière plus intelligente.”<br><div style=\"text-align:right\">- Henry Ford</div>");
-					$("#div1").html("“Recommencer, ce n’est pas refaire.”<br><div style=\"text-align:right\">- César</div>");
+					$("#div1").html("“Échouer, c'est avoir la possibilité de recommencer de manière plus intelligente.”<br><div style=\"text-align:right\">- Henry Ford</div>");
 					$("#div5").attr("style","bottom:-60px");
 				}else{
 					return;
