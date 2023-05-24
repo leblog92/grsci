@@ -27,7 +27,6 @@ if($("#div0").length==0){
 				$("#div0").attr("style","right:0;");
 				$("#div1").attr("style","left:0;");
 				$("#div2").attr("style","bottom:0px;opacity:1;");
-				$("#div3").attr("style","bottom:0px;");
 				$("#div4").attr("style","bottom:0px;");
 				if(arr0.length>0){
 					$("#div3").attr("style","bottom:0px");
