@@ -11,7 +11,6 @@ if($("#div0").length==0){
 		$("#div0").attr("style","right:0px;");
 		$("#div1").attr("style","left:0px");
 		$("#div2").attr("style","bottom:0px");
-		$("#div3").attr("style","bottom:0px");
 		$("#div4").attr("style","bottom:0px");
 
 		$("#div2").on("click",function(){
@@ -31,6 +30,7 @@ if($("#div0").length==0){
 				$("#div3").attr("style","bottom:0px;");
 				$("#div4").attr("style","bottom:0px;");
 				if(arr0.length>0){
+					$("#div3").attr("style","bottom:0px");
 					$("#div5").attr("style","bottom:0px;");
 				}
 				shown=true;
@@ -41,6 +41,7 @@ if($("#div0").length==0){
 		$("#div3").on("click",function(){
 			$("#div0").html('<img style="border-radius:4px;" src="https://leblog92.github.io/grsci/jedi.gif"/>');
 			$("#div1").html('<img style="border-radius:4px;" src="https://leblog92.github.io/grsci/jedi.gif"/>');
+			$("#div3").attr("style","bottom:-60px");
 			$("#div5").attr("style","bottom:-60px");
 			arr0=[];
 			arr1=[];
@@ -68,6 +69,7 @@ if($("#div0").length==0){
 				if(arr0.length===0){
 					$("#div0").html("“Échouer, c'est avoir la possibilité de recommencer de manière plus intelligente.”<br><div style=\"text-align:right\">- Henry Ford</div>");
 					$("#div1").html("“Échouer, c'est avoir la possibilité de recommencer de manière plus intelligente.”<br><div style=\"text-align:right\">- Henry Ford</div>");
+					$("#div3").attr("style","bottom:-60px");
 					$("#div5").attr("style","bottom:-60px");
 				}else{
 					return;
@@ -100,6 +102,7 @@ if($("#div0").length==0){
 						arr0.push("<span class=\"n"+n+"\">LocalNumber:"+ark0+"</span>");
 						arr1.push("<span class=\"n"+n+"\">"+ark1+"</span><br>");
 						$("#div4").html(n+" document");
+						$("#div3").attr("style","bottom:0px");
 						$("#div5").attr("style","bottom:0px");
 					}else{
 						if(~arr0.toString().indexOf(ark0)){
