@@ -38,8 +38,8 @@ if($("#div0").length==0){
 		});
 
 		$("#div3").on("click",function(){
-			$("#div0").html('<img style="border-radius:4px;" src="https://leblog92.github.io/grsci/jedi.gif"/>');
-			$("#div1").html('<img style="border-radius:4px;" src="https://leblog92.github.io/grsci/jedi.gif"/>');
+			$("#div0").html('<img style="border-radius:4px;width:100%;" src="https://leblog92.github.io/grsci/jedi.gif"/>');
+			$("#div1").html('<img style="border-radius:4px;width:100%;" src="https://leblog92.github.io/grsci/jedi.gif"/>');
 			$("#div3").attr("style","bottom:-60px");
 			$("#div5").attr("style","bottom:-60px");
 			arr0=[];
