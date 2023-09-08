@@ -38,16 +38,16 @@ if($("#div0").length==0){
 		});
 
 		$("#div3").on("click",function(){
-			$("#div0").html('<img style="border-radius:4px;width:100%;" src="https://leblog92.github.io/grsci/jedi.gif"/>');
-			$("#div1").html('<img style="border-radius:4px;width:100%;" src="https://leblog92.github.io/grsci/smith.gif"/>');
+			$("#div1").html('<img style="border-radius:4px;width:100%;" src="https://leblog92.github.io/grsci/jedi.gif"/>');
+			$("#div0").html('<img style="border-radius:4px;width:100%;" src="https://leblog92.github.io/grsci/smith.gif"/>');
 			$("#div3").attr("style","bottom:-60px");
 			$("#div5").attr("style","bottom:-60px");
 			arr0=[];
 			arr1=[];
 			n=0;
 			setTimeout(function(){
-				$("#div0").html("“Ce ne sont pas ces documents que vous recherchez.”<br><div style=\"text-align:right\">- Obi-Wan Kenobi</div>");
-				$("#div1").html("“Now if you'll just look right here ...”<br><div style=\"text-align:right\">- Agent J</div>");
+				$("#div1").html("“Ce ne sont pas ces documents que vous recherchez.”<br><div style=\"text-align:right\">- Obi-Wan Kenobi</div>");
+				$("#div0").html("“Now if you'll just look right here ...”<br><div style=\"text-align:right\">- Agent J</div>");
 				$("#div4").html(n+" document");
 			},1920);
 			
@@ -66,8 +66,8 @@ if($("#div0").length==0){
 					$("#div4").html(n+" document");
 				}
 				if(arr0.length===0){
-					$("#div0").html("“Échouer, c'est avoir la possibilité de recommencer de manière plus intelligente.”<br><div style=\"text-align:right\">- Henry Ford</div>");
-					$("#div1").html("“Your failure here is a metaphor. To learn for what, please resume climbing.”<br><div style=\"text-align:right\">- Rob Dubbin</div>");
+					$("#div1").html("“Échouer, c'est avoir la possibilité de recommencer de manière plus intelligente.”<br><div style=\"text-align:right\">- Henry Ford</div>");
+					$("#div0").html("“Better by far you should forget and smile. Than that you should remember and be sad.”<br><div style=\"text-align:right\">- Christina Rossetti</div>");
 					$("#div3").attr("style","bottom:-60px");
 					$("#div5").attr("style","bottom:-60px");
 				}else{
