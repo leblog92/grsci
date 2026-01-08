@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Critères de Recherche - Documentation</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #2c3e50, #4a6491);
+            color: white;
+            padding: 30px 40px;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .intro {
+            padding: 25px 40px;
+            background-color: #f8f9fa;
+            border-bottom: 1px solid #eaeaea;
+        }
+        
+        .intro p {
+            margin-bottom: 15px;
+        }
+        
+        .highlight {
+            background-color: #e8f4fc;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 4px solid #3498db;
+            margin: 20px 0;
+        }
+        
+        .table-container {
+            padding: 20px 40px 40px;
+            overflow-x: auto;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        
+        thead {
+            background-color: #2c3e50;
+            color: white;
+        }
+        
+        th {
+            padding: 18px 15px;
+            text-align: left;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+        
+        tbody tr {
+            border-bottom: 1px solid #e0e0e0;
+            transition: background-color 0.2s;
+        }
+        
+        tbody tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        
+        tbody tr:hover {
+            background-color: #f0f7ff;
+        }
+        
+        td {
+            padding: 16px 15px;
+            vertical-align: top;
+        }
+        
+        .criterium {
+            font-weight: 600;
+            color: #2c3e50;
+        }
+        
+        .operator {
+            font-family: monospace;
+            background-color: #f1f1f1;
+            padding: 3px 8px;
+            border-radius: 3px;
+            color: #d35400;
+            font-weight: 600;
+        }
+        
+        .example {
+            font-family: monospace;
+            background-color: #f9f9f9;
+            padding: 5px 10px;
+            border-radius: 4px;
+            border-left: 3px solid #3498db;
+            font-size: 0.95rem;
+            word-break: break-word;
+        }
+        
+        .operators-section {
+            padding: 20px 40px;
+            background-color: #2c3e50;
+            color: white;
+            margin-top: 20px;
+        }
+        
+        .operators-section h2 {
+            margin-bottom: 15px;
+            color: #ecf0f1;
+        }
+        
+        .boolean-operator {
+            display: inline-block;
+            background-color: #e74c3c;
+            color: white;
+            padding: 8px 15px;
+            margin: 5px 10px 5px 0;
+            border-radius: 4px;
+            font-family: monospace;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #7f8c8d;
+            font-size: 0.9rem;
+            border-top: 1px solid #eee;
+        }
+        
+        @media (max-width: 768px) {
+            header, .intro, .table-container, .operators-section {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            th, td {
+                padding: 12px 8px;
+            }
+            
+            .table-container {
+                padding: 0 10px 20px;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            th, td {
+                display: block;
+                width: 100%;
+            }
+            
+            tr {
+                display: block;
+                margin-bottom: 20px;
+                border: 1px solid #ddd;
+                border-radius: 5px;
+                padding: 10px;
+            }
+            
+            thead {
+                display: none;
+            }
+            
+            td:before {
+                content: attr(data-label);
+                font-weight: bold;
+                display: block;
+                margin-bottom: 5px;
+                color: #2c3e50;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Critères de Recherche Documentaire</h1>
+            <p class="subtitle">Guide des opérateurs de recherche et exemples d'utilisation pour interroger le catalogue</p>
+        </header>
+        
+        <section class="intro">
+            <p>Cette page présente les différents critères de recherche disponibles pour interroger la base de données documentaire. Chaque critère est associé à un opérateur spécifique et peut être utilisé avec des opérateurs booléens pour affiner les recherches.</p>
+            
+            <div class="highlight">
+                <p><strong>Mode d'emploi :</strong> Utilisez la syntaxe <code>opérateur:valeur</code> dans le champ de recherche. Par exemple : <code>author_t:philippe besson 1967</code> pour rechercher les documents de cet auteur.</p>
+            </div>
+        </section>
+        
+        <section class="table-container">
+            <h2>Tableau des critères de recherche</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Critère</th>
+                        <th>Opérateur</th>
+                        <th>Exemple</th>
+                        <th>Commentaire</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="criterium" data-label="Critère">Auteur</td>
+                        <td data-label="Opérateur"><span class="operator">author_t</span></td>
+                        <td data-label="Exemple"><span class="example">author_t:philippe besson 1967</span></td>
+                        <td data-label="Commentaire">Année facultative (pour désambiguïsation si homonyme)</td>
+                    </tr>
+                    <tr>
+                        <td class="criterium" data-label="Critère">Sujet</td>
+                        <td data-label="Opérateur"><span class="operator">subject_t</span></td>
+                        <td data-label="Exemple"><span class="example">subject_t:Psychologie du travail</span></td>
+                        <td data-label="Commentaire">Sujet (si référencé dans catalogue)</td>
+                    </tr>
+                    <tr>
+                        <td class="criterium" data-label="Critère">Genre</td>
+                        <td data-label="Opérateur"><span class="operator">genre_t</span></td>
+                        <td data-label="Exemple"><span class="example">genre_t:drame</span></td>
+                        <td data-label="Commentaire">Genre (si référencé dans catalogue)</td>
+                    </tr>
+                    <tr>
+                        <td class="criterium" data-label="Critère">Classe Dewey</td>
+                        <td data-label="Opérateur"><span class="operator">identifier_s</span></td>
+                        <td data-label="Exemple"><span class="example">identifier_s:"700"</span></td>
+                        <td data-label="Commentaire">Arts, loisirs et sports</td>
+                    </tr>
+                    <tr>
+                        <td class="criterium" data-label="Critère">Indice Dewey</td>
+                        <td data-label="Opérateur"><span class="operator">classificationDewey_t</span></td>
+                        <td data-label="Exemple"><span class="example">classificationDewey_t:"700,1"</span></td>
+                        <td data-label="Commentaire">Philosophie et théorie des arts (différent côte locale)</td>
+                    </tr>
+                    <tr>
+                        <td class="criterium" data-label="Critère">Côte locale</td>
+                        <td data-label="Opérateur"><span class="operator">StockShelfmark</span></td>
+                        <td data-label="Exemple"><span class="example">StockShelfmark:"700.1"</span></td>
+                        <td data-label="Commentaire">Philosophie et théorie des arts (si plusieurs indices)</td>
+                    </tr>
+                    <tr>
+                        <td class="criterium" data-label="Critère">Titre</td>
+                        <td data-label="Opérateur"><span class="operator">title_t</span></td>
+                        <td data-label="Exemple"><span class="example">title_t:grand rouge</span></td>
+                        <td data-label="Commentaire">Termes "grand" et "rouge" présents dans le titre</td>
+                    </tr>
+                    <tr>
+                        <td class="criterium" data-label="Critère">Origine créateur</td>
+                        <td data-label="Opérateur"><span class="operator">creator_t</span></td>
+                        <td data-label="Exemple"><span class="example">creator_t:réalisateur colombien</span></td>
+                        <td data-label="Commentaire">Réalisateur colombien (ou romancier etc.)</td>
+                    </tr>
+                    <tr>
+                        <td class="criterium" data-label="Critère">Public</td>
+                        <td data-label="Opérateur"><span class="operator">scopeLimit_s</span></td>
+                        <td data-label="Exemple"><span class="example">scopeLimit_s:Adultes</span></td>
+                        <td data-label="Commentaire">Limité au contenu public adulte</td>
+                    </tr>
+                    <tr>
+                        <td class="criterium" data-label="Critère">Support</td>
+                        <td data-label="Opérateur"><span class="operator">ZMATFacet</span></td>
+                        <td data-label="Exemple"><span class="example">ZMATFacet:MICROSIL_MUSIC OR ZMATFacet:MUSIC_CD</span></td>
+                        <td data-label="Commentaire">Support vinyle ou CD musique</td>
+                    </tr>
+                    <tr>
+                        <td class="criterium" data-label="Critère">Catégorie</td>
+                        <td data-label="Opérateur"><span class="operator">StockCategoryCode</span></td>
+                        <td data-label="Exemple"><span class="example">StockCategoryCode:JX</span></td>
+                        <td data-label="Commentaire">Jeux</td>
+                    </tr>
+                    <tr>
+                        <td class="criterium" data-label="Critère">Sous-localisation</td>
+                        <td data-label="Opérateur"><span class="operator">StockSublocationCode</span></td>
+                        <td data-label="Exemple"><span class="example">StockSublocationCode:JVO</span></td>
+                        <td data-label="Commentaire">Fonds jeux vidéo</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        
+        <section class="operators-section">
+            <h2>Opérateurs booléens disponibles</h2>
+            <p>Ces opérateurs permettent de combiner plusieurs critères de recherche :</p>
+            <div>
+                <span class="boolean-operator">AND</span>
+                <span class="boolean-operator">OR</span>
+                <span class="boolean-operator">NOT</span>
+            </div>
+            <p style="margin-top: 15px; opacity: 0.9;">Exemple d'utilisation combinée : <code>author_t:dumas AND subject_t:histoire</code></p>
+        </section>
+        
+        <footer>
+            <p>Documentation des critères de recherche • Dernière mise à jour : Mars 2024</p>
+        </footer>
+    </div>
+
+    <script>
+        // Ajout d'un effet de surlignage au survol des lignes du tableau
+        document.addEventListener('DOMContentLoaded', function() {
+            const rows = document.querySelectorAll('tbody tr');
+            
+            rows.forEach(row => {
+                row.addEventListener('mouseenter', function() {
+                    this.style.transition = 'background-color 0.3s ease';
+                });
+            });
+            
+            // Ajout d'un événement pour les exemples de code
+            const examples = document.querySelectorAll('.example');
+            examples.forEach(example => {
+                example.addEventListener('click', function() {
+                    const textToCopy = this.textContent;
+                    navigator.clipboard.writeText(textToCopy).then(() => {
+                        const originalText = this.textContent;
+                        this.textContent = 'Copié !';
+                        this.style.backgroundColor = '#2ecc71';
+                        this.style.color = 'white';
+                        
+                        setTimeout(() => {
+                            this.textContent = originalText;
+                            this.style.backgroundColor = '';
+                            this.style.color = '';
+                        }, 1500);
+                    });
+                });
+                
+                // Indiquer que c'est cliquable
+                example.style.cursor = 'pointer';
+                example.title = 'Cliquez pour copier';
+            });
+        });
+    </script>
+</body>
+</html>
