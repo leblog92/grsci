@@ -19,6 +19,10 @@
             padding: 20px;
         }
         
+		option{
+			font-family:Consolas;
+		}
+		
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -242,27 +246,1180 @@
                         <td data-label="Commentaire">Année facultative (pour désambiguïsation si homonyme)</td>
                     </tr>
                     <tr>
-                        <td class="criterium" data-label="Critère">Sujet</td>
+                        <td class="criterium" data-label="Critère">Thème</td>
                         <td data-label="Opérateur"><span class="operator">subject_t</span></td>
                         <td data-label="Exemple"><span class="example">subject_t:Psychologie du travail</span></td>
-                        <td data-label="Commentaire">Sujet (si référencé dans catalogue)</td>
+                        <td data-label="Commentaire">Sujet (comme référencé dans catalogue)<br>
+							<select>
+								<option>- Thème (liste incomplète) -</option>
+								<option>Animation  Etats-Unis</option>
+								<option>Arts & Loisirs créatifs</option>
+								<option>Baccalauréat Examens, questions, etc</option>
+								<option>Bien-être</option>
+								<option>Bureautique</option>
+								<option>Chansons acc. guitare Partitions</option>
+								<option>Chansons acc. piano Partitions</option>
+								<option>Cinéma Allemagne</option>
+								<option>Cinéma Etats-Unis</option>
+								<option>Cinéma France</option>
+								<option>Cinéma Grande-Bretagne</option>
+								<option>Cinéma Italie</option>
+								<option>Cinéma Japon</option>
+								<option>Contes allemands Ouvrages pour la jeunesse</option>
+								<option>Contes français Ouvrages pour la jeunesse</option>
+								<option>Contes Ouvrages pour la jeunesse</option>
+								<option>Couture Manuels d'amateurs</option>
+								<option>Documentaires</option>
+								<option>Guerre mondiale </option>
+								<option>Humour</option>
+								<option>Informatique & Sécurité</option>
+								<option>Jardinage</option>
+								<option>Jeux de cartes</option>
+								<option>Jeux d'intérieur</option>
+								<option>Livres-jeux Ouvrages pour la jeunesse</option>
+								<option>Métiers</option>
+								<option>Multimédia</option>
+								<option>Musique</option>
+								<option>Musique Brésil</option>
+								<option>Musique Etats-Unis</option>
+								<option>Musique Jamaïque</option>
+								<option>Passeport linguistique</option>
+								<option>Photographie</option>
+								<option>Piano, musique de Partitions</option>
+								<option>Poésie Ouvrages pour la jeunesse</option>
+								<option>Puzzles</option>
+								<option>Réalisation de soi</option>
+								<option>Romans</option>
+								<option>Romans étrangers</option>
+								<option>Romans francophones</option>
+								<option>Séries télévisées Etats-Unis</option>
+								<option>Séries télévisées France</option>
+								<option>Séries télévisées Grande-Bretagne</option>
+								<option>Sport & Fitness</option>
+								<option>Théâtre France 20e siècle</option>
+								<option>Vie Professionnelle</option>
+							</select>
+						</td>
                     </tr>
                     <tr>
                         <td class="criterium" data-label="Critère">Genre</td>
                         <td data-label="Opérateur"><span class="operator">genre_t</span></td>
                         <td data-label="Exemple"><span class="example">genre_t:drame</span></td>
-                        <td data-label="Commentaire">Genre (si référencé dans catalogue)</td>
+                        <td data-label="Commentaire">Genre (comme référencé dans catalogue)</td>
                     </tr>
                     <tr>
-                        <td class="criterium" data-label="Critère">Classe Dewey</td>
+						<td class="criterium" data-label="Critère">Classe Dewey</td>
                         <td data-label="Opérateur"><span class="operator">identifier_s</span></td>
                         <td data-label="Exemple"><span class="example">identifier_s:"700"</span></td>
-                        <td data-label="Commentaire">Arts, loisirs et sports</td>
+                        <td data-label="Commentaire">Arts, loisirs et sports<br>
+							<select>
+								<option>- Classe Dewey -</option>
+								<option>000 Généralités sur l’informatique, l’information, ouvrages géné…</option>
+								<option>001 Connaissance</option>
+								<option>002 Livre (écrits, bibliothèques, et sujets en rapport aux livre…</option>
+								<option>003 Systèmes</option>
+								<option>004 Traitement de données et Informatique</option>
+								<option>005 Programmation informatique, Logiciels et donnée</option>
+								<option>006 Applications informatique</option>
+								<option>009 [Vacant]</option>
+								<option>010 Bibliographie</option>
+								<option>011 Bibliographies</option>
+								<option>012 Bibliographies d'individus</option>
+								<option>013 [Vacant]</option>
+								<option>014 Bibliographies d'ouvrages anonymes ou sous pseudonymes</option>
+								<option>015 Bibliographies d'ouvrages sur des lieux précis</option>
+								<option>016 Bibliographies d'ouvrages sur des sujets précis</option>
+								<option>017 Catalogues de sujets généraux</option>
+								<option>018 Catalogues classés par auteurs, dates, etc.</option>
+								<option>019 Catalogues de dictionnaires</option>
+								<option>020 Sciences de l'information et des bibliothèques</option>
+								<option>020 Bibliothéconomie et Science de l'information</option>
+								<option>021 Relation des bibliothèques (avec les archives, etc.)</option>
+								<option>022 Administration d'installations physiques</option>
+								<option>023 Gestion des ressources humaines</option>
+								<option>024 [Vacant]</option>
+								<option>025 Gestion des bibliothèques</option>
+								<option>026 Bibliothèques de sujets précis</option>
+								<option>027 Bibliothèques générales</option>
+								<option>028 Lecture et utilisation des autres médias d'information</option>
+								<option>029 [Vacant]</option>
+								<option>030 Encyclopédies générales</option>
+								<option>031 Encyclopédies en anglais américain</option>
+								<option>032 Encyclopédies en anglais</option>
+								<option>033 Encyclopédies dans d'autres langues germaniques</option>
+								<option>034 Encyclopédies en français, occitan, et catalan</option>
+								<option>035 Encyclopédies en italien, roumain, et langues apparentées</option>
+								<option>036 Encyclopédies en espagnol et portugais</option>
+								<option>037 Encyclopédies en langues slaves</option>
+								<option>038 Encyclopédies en langues scandinaves</option>
+								<option>039 Encyclopédies dans d'autres langues</option>
+								<option>040 [Vacant]</option>
+								<option>050 Publications en série d’ordre général</option>
+								<option>051 Publications en série en anglais américain</option>
+								<option>052 Publications en série en anglais</option>
+								<option>053 Publications en série dans d'autres langues germaniques</option>
+								<option>054 Publications en série en français, occitan, et catalan</option>
+								<option>055 Publications en série en italien, roumain, et langues appare…</option>
+								<option>056 Publications en série en espagnol et portugais</option>
+								<option>057 Publications en série en langues slaves</option>
+								<option>058 Publications en série en langues scandinaves</option>
+								<option>059 Publications en série dans d'autres langues</option>
+								<option>060 Organisations générales et muséologie</option>
+								<option>061 Organisations en Amérique du Nord</option>
+								<option>062 Organisations dans les îles Britanniques, en Angleterre</option>
+								<option>063 Organisations en Europe centrale, en Allemagne</option>
+								<option>064 Organisations en France et à Monaco</option>
+								<option>065 Organisations en Italie et dans les îles voisines</option>
+								<option>066 Organisations en péninsule Ibérique et dans les îles voisine…</option>
+								<option>067 Organisations en Europe de l'Est, en Russie</option>
+								<option>068 Organisations dans d'autres zones géographiques</option>
+								<option>069 Muséologie</option>
+								<option>070 Médias documentaires, journalisme, édition</option>
+								<option>071 Journaux en Amérique du Nord</option>
+								<option>072 Journaux dans les îles Britanniques, en Angleterre</option>
+								<option>073 Journaux en Europe centrale, en Allemagne</option>
+								<option>074 Journaux en France et à Monaco</option>
+								<option>075 Journaux en Italie et dans les îles voisines</option>
+								<option>076 Journaux en péninsule Ibérique et dans les îles voisines</option>
+								<option>077 Journaux en Europe de l'Est, en Russie</option>
+								<option>078 Journaux en Scandinavie</option>
+								<option>079 Journaux dans d'autres zones géographiques</option>
+								<option>080 Recueils généraux</option>
+								<option>081 Recueils en anglais américain</option>
+								<option>082 Recueils en anglais</option>
+								<option>083 Recueils dans d'autres langues germaniques</option>
+								<option>084 Recueils en français, occitan, et catalan</option>
+								<option>085 Recueils en italien, roumain, et langues apparentées</option>
+								<option>086 Recueils en espagnol et portugais</option>
+								<option>087 Recueils en langues slaves</option>
+								<option>088 Recueils en langues scandinaves</option>
+								<option>089 Recueils dans d'autres langues</option>
+								<option>090 Manuscrits, livres rares, autres documents imprimés rares</option>
+								<option>091 Manuscrits</option>
+								<option>092 Tabellaires</option>
+								<option>093 Incunables</option>
+								<option>094Livres imprimés</option>
+								<option>095 Livres remarquables pour leur reliure</option>
+								<option>096 Livres remarquables pour leurs illustrations</option>
+								<option>097 Livres remarquables pour leur propriété ou leur origine</option>
+								<option>098 Œuvres interdites, forgeries, canulars</option>
+								<option>099 Livres remarquables pour leur format</option>
+								<option>100 Généralités sur la philosophie, la parapsychologie, l’occult…</option>
+								<option>100 Philosophie et psychologie</option>
+								<option>101 Théorie de la philosophie</option>
+								<option>102 Divers</option>
+								<option>103 Dictionnaires et encyclopédies</option>
+								<option>104 [Vacant]</option>
+								<option>105 Publications en série</option>
+								<option>106 Organisations et gestion</option>
+								<option>107 Education, recherche, sujets relatifs à la philosophie</option>
+								<option>108 Groupes de philosophes</option>
+								<option>109 Histoire et biographie recueillie</option>
+								<option>110 Métaphysique</option>
+								<option>111 Ontologie</option>
+								<option>112 [Vacant] — auparavant "Méthodologie"</option>
+								<option>113 Cosmologie (Philosophie de la nature)</option>
+								<option>114 Espace</option>
+								<option>115 Temps</option>
+								<option>116 Changement</option>
+								<option>117 Structure</option>
+								<option>118 Force et énergie</option>
+								<option>119 Nombre et quantité</option>
+								<option>120 Épistémologie, causalité, finalité, genre humain</option>
+								<option>120 Épistémologie, causalité, genre humain</option>
+								<option>121 Épistémologie (Science du savoir)</option>
+								<option>122 Causalité</option>
+								<option>123 Déterminisme et Indéterminisme</option>
+								<option>124 Téléologie</option>
+								<option>125 [Vacant] — auparavant "Infini"</option>
+								<option>126 L'individu</option>
+								<option>127 L'inconscient et le subconscient</option>
+								<option>128 Humanité</option>
+								<option>129 Origine et devenir des âmes des individus</option>
+								<option>130 Parapsychologie et occultisme</option>
+								<option>131 Méthodes parapsychologiques et occultes pour atteindre le bo…</option>
+								<option>132 [Vacant] — auparavant "Troubles psychiques"</option>
+								<option>133 Sujets spécifiques de parapsychologie et d'occultisme</option>
+								<option>134 [Vacant] — auparavant "Mesmérisme et Clairvoyance"</option>
+								<option>135 Rêves et mystères</option>
+								<option>136 [Vacant] — auparavant "Caractéristiques mentales"</option>
+								<option>137 Graphologie divinatoire</option>
+								<option>138 Physiognomonie</option>
+								<option>139 Phrénologie</option>
+								<option>140 Les divers systèmes et écoles philosophiques</option>
+								<option>140 Les divers points de vue et écoles philosophiques</option>
+								<option>141 Idéalisme, systèmes et doctrines apparentées</option>
+								<option>142 Criticisme</option>
+								<option>143 Bergsonisme et intuitionnisme</option>
+								<option>144 Humanisme, systèmes et doctrines apparentées</option>
+								<option>145 Sensationnalisme</option>
+								<option>146 Naturalisme, systèmes et doctrines apparentées</option>
+								<option>147 Panthéisme, systèmes et doctrines apparentées</option>
+								<option>148 Dogmatisme, éclectisme, libéralisme, syncrétisme, et traditi…</option>
+								<option>149 Autres systèmes et doctrines philosophiques</option>
+								<option>150 Psychologie</option>
+								<option>151 [Vacant] — auparavant "Intellect"</option>
+								<option>152 Perception sensorielle, mouvement, émotions, et pulsions phy…</option>
+								<option>153 Processus mentaux conscients et intelligence</option>
+								<option>154 Subconscient, altered state et processus alternatifs</option>
+								<option>155 Psychologie différentielle et psychologie du développement</option>
+								<option>156 Psychologie comparée</option>
+								<option>157 [Vacant] — auparavant "Émotions"</option>
+								<option>158 Psychologie appliquée</option>
+								<option>159 [Vacant] — auparavant "Volonté"</option>
+								<option>160 Logique</option>
+								<option>160 Logique philosophique</option>
+								<option>161 Raisonnement inductif</option>
+								<option>162 Raisonnement déductif</option>
+								<option>164 [Vacant]</option>
+								<option>165 Raisonnement fallacieux et sources d'erreur</option>
+								<option>166 Syllogismes</option>
+								<option>167 Hypothèses</option>
+								<option>168 Argumentation et persuasion</option>
+								<option>169 Analogie</option>
+								<option>170 Éthique</option>
+								<option>170 Éthique (Philosophie morale)</option>
+								<option>171 Systèmes éthiques</option>
+								<option>172 Éthique politique</option>
+								<option>173 Éthique des relations familiales</option>
+								<option>174 Éthique professionnelle</option>
+								<option>175 Éthique du loisir, du temps libre, du spectacle, de la commu…</option>
+								<option>176 Éthique du sexe et de la reproduction</option>
+								<option>177 Éthique des rapports sociaux</option>
+								<option>178 Éthique de la consommation</option>
+								<option>179 Autres normes d'éthiques</option>
+								<option>180 Philosophie antique, médiévale, orientale</option>
+								<option>181 Philosophie orientale</option>
+								<option>182 Philosophie présocratique</option>
+								<option>183 Sophistique, socratique, autres philosophies liées au monde …</option>
+								<option>184 Platonisme</option>
+								<option>185 Aristotélisme</option>
+								<option>186 Scepticisme et néoplatonisme</option>
+								<option>187 Épicurisme</option>
+								<option>188 Stoïcisme</option>
+								<option>189 Philosophie médiévale occidentale</option>
+								<option>190 Philosophie occidentale contemporaine et autres philosophies…</option>
+								<option>191 Philosophie américaine et canadienne</option>
+								<option>192 Philosophies des îles britanniques</option>
+								<option>193 Philosophie d'Allemagne et d'Autriche</option>
+								<option>194 Philosophie de France</option>
+								<option>195 Philosophie d'Italie</option>
+								<option>196 Philosophie d'Espagne et du Portugal</option>
+								<option>197 Philosophie de Russie</option>
+								<option>198 Philosophie de Scandinavie et de Finlande</option>
+								<option>199 Philosophie d'autres régions du monde</option>
+								<option>200 Généralités sur les religions</option>
+								<option>200 Religion</option>
+								<option>201 Mythologie religieuse, grandes catégories de religions, théo…</option>
+								<option>202 Doctrines</option>
+								<option>203 Culte public et autres pratiques</option>
+								<option>204 Expérience, vie, pratique religieuses</option>
+								<option>205 Morale religieuse</option>
+								<option>206 Chefs spirituels et organisation</option>
+								<option>207 Missions et enseignement religieux</option>
+								<option>208 Sources</option>
+								<option>209 Sectes et mouvements réformistes</option>
+								<option>210 Philosophie et théorie de la religion</option>
+								<option>211 Concepts de Dieu</option>
+								<option>212 Existence de Dieu, moyens de connaître Dieu, attributs de Di…</option>
+								<option>213 Création</option>
+								<option>214 Théodicée</option>
+								<option>215 Science et religion</option>
+								<option>216 [Vacant]</option>
+								<option>217 [Vacant]</option>
+								<option>218 Humanité (le genre humain)</option>
+								<option>219 [Vacant]</option>
+								<option>220 Bible[5]</option>
+								<option>220 Bible</option>
+								<option>221 Ancien Testament (Tanakh)</option>
+								<option>222 Livres historiques de l'Ancien Testament</option>
+								<option>223 Livres poétiques de l'Ancien Testament</option>
+								<option>224 Livres prophétiques de l'Ancien Testament</option>
+								<option>225 Nouveau Testament</option>
+								<option>226 Évangiles et Actes des Apôtres</option>
+								<option>227 Épitres</option>
+								<option>228 Apocalypse de saint Jean</option>
+								<option>229 Livres apocryphes et pseudépigraphes</option>
+								<option>230 Christianisme. Théologie chrétienne[5]</option>
+								<option>230 Christianisme Théologie chrétienne</option>
+								<option>231 Dieu</option>
+								<option>232 Jésus de Nazareth et sa famille Christologie</option>
+								<option>233 Humanité (le genre humain)</option>
+								<option>234 Salut et grâce</option>
+								<option>235 Êtres spirituels</option>
+								<option>236 Eschatologie</option>
+								<option>237 [Vacant]</option>
+								<option>238 Croyances, confessions de foi</option>
+								<option>239 Apologétique et polémique</option>
+								<option>240 Théologie morale et spirituelle chrétiennes[5]</option>
+								<option>240 Théologie morale et spirituelle chrétiennes</option>
+								<option>241 Morale chrétienne</option>
+								<option>242 Textes de dévotion</option>
+								<option>243 Textes d'évangélisation à l'intention des individus et des f…</option>
+								<option>244 [Vacant]</option>
+								<option>245 [Vacant]</option>
+								<option>246 Art dans le christianisme</option>
+								<option>247 Mobilier d'église et objets religieux</option>
+								<option>248 Expérience, pratique, vie chrétiennes</option>
+								<option>249 Pratiques chrétiennes dans la vie familiale</option>
+								<option>250 Églises chrétiennes locales et ordres religieux chrétiens[5]…</option>
+								<option>250 Églises chrétiennes locales et ordres religieux chrétiens</option>
+								<option>251 Prédication (homilétique)</option>
+								<option>252 Textes de sermons (homélies)</option>
+								<option>253 Fonctions et devoirs pastoraux (théologie pastorale)</option>
+								<option>254 Administration des paroisses</option>
+								<option>255 Congrégations et ordres religieux</option>
+								<option>256 [Vacant]</option>
+								<option>257 [Vacant]</option>
+								<option>258 [Vacant]</option>
+								<option>259 Activités pastorales auprès des familles, des catégories par…</option>
+								<option>260 Théologie chrétienne et société et ecclésiologie</option>
+								<option>261 Théologie chrétienne et société et relations du christianism…</option>
+								<option>262 Ecclésiologie</option>
+								<option>263 Jours, temps, lieux destinés au culte</option>
+								<option>264 Culte public</option>
+								<option>265 Sacrements, autres rites et cérémonies</option>
+								<option>266 Missions</option>
+								<option>267 Associations à but religieux</option>
+								<option>268 Enseignement religieux</option>
+								<option>269 Renouveau spirituel</option>
+								<option>270 Histoire et géographie du christianisme et de l’Église chrét…</option>
+								<option>270 Histoire et géographie du christianisme et de l'Église</option>
+								<option>271 Congrégations et ordres religieux dans l'histoire de l'Églis…</option>
+								<option>272 Persécutions</option>
+								<option>273 Controverses et hérésies doctrinales</option>
+								<option>274 Christianisme en Europe, Église chrétienne en Europe</option>
+								<option>275 Christianisme en Asie, Église chrétienne en Asie</option>
+								<option>276 Christianisme en Afrique, Église chrétienne en Afrique</option>
+								<option>277 Christianisme en Amérique du Nord, Église chrétienne en Amér…</option>
+								<option>278 Christianisme en Amérique du Sud, Église chrétienne en Améri…</option>
+								<option>279 Christianisme dans les autres parties du monde, Église chrét…</option>
+								<option>280 Confessions et sectes de l'Église chrétienne</option>
+								<option>281 Église primitive et Églises orientales</option>
+								<option>282 Église catholique romaine</option>
+								<option>283 Églises anglicanes</option>
+								<option>284 Confessions protestantes d'origine européenne continentale e…</option>
+								<option>285 Églises presbytériennes, Églises réformées en Amérique, Égli…</option>
+								<option>286 Églises baptistes, des disciples du Christ, adventistes</option>
+								<option>287 Églises méthodistes, Églises liées au méthodisme</option>
+								<option>288 [Vacant]</option>
+								<option>289 Autres confessions et sectes</option>
+								<option>290 Autres religions</option>
+								<option>291 [Vacant]</option>
+								<option>292 Religion classique (religions grecque et romaine)</option>
+								<option>293 Religion germanique</option>
+								<option>294 Religions d'origine hindoue</option>
+								<option>295 Zoroastrisme (mazdéisme, parsisme)</option>
+								<option>296 Judaïsme</option>
+								<option>297 Islam, Babisme et Bahaïsme</option>
+								<option>298 [Vacant]</option>
+								<option>299 Autres religions</option>
+								<option>300 Généralités sur les sciences sociales</option>
+								<option>300 Sciences sociales</option>
+								<option>301 Sociologie et anthropologie</option>
+								<option>302 Interaction sociale</option>
+								<option>303 Processus sociaux</option>
+								<option>304 Facteurs influençant le comportement social</option>
+								<option>305 Groupes sociaux</option>
+								<option>306 Culture et institutions</option>
+								<option>307 Communautés</option>
+								<option>308 [Vacant]</option>
+								<option>309 [Vacant]</option>
+								<option>310 Statistiques générales</option>
+								<option>310 Recueils de statistiques générales</option>
+								<option>311 [Vacant]</option>
+								<option>312 [Vacant]</option>
+								<option>313 [Vacant]</option>
+								<option>314 Statistiques générales de l'Europe</option>
+								<option>315 Statistiques générales de l'Asie</option>
+								<option>316 Statistiques générales de l'Afrique</option>
+								<option>317 Statistiques générales de l'Amérique du Nord</option>
+								<option>318 Statistiques générales de l'Amérique du Sud</option>
+								<option>319 Statistiques générales des autres parties du monde</option>
+								<option>320 Science politique</option>
+								<option>320 Science politique (politique et gouvernement)</option>
+								<option>321 Types d'États et de gouvernements</option>
+								<option>322 Relations entre l'État et les groupes sociaux organisés</option>
+								<option>323 Droits civils et politiques</option>
+								<option>324 La vie politique</option>
+								<option>325 Migrations internationales et colonisation</option>
+								<option>326 Esclavage et émancipation des esclaves</option>
+								<option>327 Relations internationales</option>
+								<option>328 Le processus législatif</option>
+								<option>329 [Vacant]</option>
+								<option>330 Économie</option>
+								<option>331 Économie du travail</option>
+								<option>332 Économie financière</option>
+								<option>333 Économie de la terre et des ressources naturelles</option>
+								<option>334 Coopératives</option>
+								<option>335 Socialisme et systèmes apparentés</option>
+								<option>336 Finances publiques</option>
+								<option>337 Économie internationale</option>
+								<option>338 Production</option>
+								<option>339 Macroéconomie et sujets connexes</option>
+								<option>340 Droit</option>
+								<option>341 Droit international</option>
+								<option>342 Droit constitutionnel et administratif</option>
+								<option>343 Droit de la défense, droit fiscal, commercial, industriel</option>
+								<option>344 Droit social, du travail, de la santé, de l'éducation et de …</option>
+								<option>345 Droit pénal</option>
+								<option>346 Droit privé</option>
+								<option>347 Procédure civile et tribunaux</option>
+								<option>348 Lois, réglementations, jurisprudence</option>
+								<option>349 Droit interne des différents États. Ouvrages d'ensemble sur …</option>
+								<option>350 Administration publique. Art et science militaire</option>
+								<option>351 Administration publique</option>
+								<option>352 Généralités</option>
+								<option>353 Secteurs spécifiques de l'administration</option>
+								<option>354 Ministères et services chargés de l'environnement, des resso…</option>
+								<option>355 Art et science militaires</option>
+								<option>356 Infanterie</option>
+								<option>357 Forces montées</option>
+								<option>358 Artillerie. Forces aériennes et spatiales</option>
+								<option>359 Marine militaire</option>
+								<option>360 Problèmes et services sociaux. Associations</option>
+								<option>361 Problèmes sociaux. Aide sociale</option>
+								<option>362 Problèmes et services d'aide sociale</option>
+								<option>363 Autres problèmes et services sociaux</option>
+								<option>364 Criminologie</option>
+								<option>365 Établissements pénitentiaires</option>
+								<option>366 Associations</option>
+								<option>367 Clubs</option>
+								<option>368 Assurances</option>
+								<option>369 Associations diverses</option>
+								<option>370 Éducation, enseignement</option>
+								<option>371 Les écoles et leurs activités, enseignement spécialisé, éduc…</option>
+								<option>372 L'école élémentaire</option>
+								<option>373 Enseignement secondaire</option>
+								<option>374 Formation des adultes</option>
+								<option>375 Programme d'enseignement</option>
+								<option>376 [Vacant] — auparavant "Éducation des femmes", reclassé à 371…</option>
+								<option>377 [Vacant] — auparavant "Écoles religieuses", reclassé à 371.0…</option>
+								<option>378 Enseignement supérieur</option>
+								<option>379 L'enseignement et l'État. Politique éducative</option>
+								<option>380 Commerce, communications, transports</option>
+								<option>381 Commerce intérieur</option>
+								<option>382 Commerce international (commerce extérieur)</option>
+								<option>383 Postes</option>
+								<option>384 Communications, télécommunications</option>
+								<option>385 Transports ferroviaires</option>
+								<option>386 Transports par voies d'eau intérieures (Transport fluvial)</option>
+								<option>387 Transports maritime, aérien, spatial</option>
+								<option>388 Transports terrestre.Transports routiers</option>
+								<option>389 Métrologie et normalisation</option>
+								<option>390 Coutumes, savoir-vivre, folklore</option>
+								<option>391 Costume et apparence personnelle</option>
+								<option>392 Coutumes liées au cycle de l'existence et à la vie quotidien…</option>
+								<option>393 Coutumes funéraires</option>
+								<option>394 Coutumes générales</option>
+								<option>395 Étiquette, savoir-vivre</option>
+								<option>396 [Vacant]</option>
+								<option>397 [Vacant]</option>
+								<option>398 Folklore</option>
+								<option>399 Coutumes de la guerre et de la diplomatie</option>
+								<option>400 Généralités sur les langues</option>
+								<option>400 Langage</option>
+								<option>401 Philosophie et théorie</option>
+								<option>402 Ouvrages divers</option>
+								<option>403 Dictionnaires, encyclopédies, concordances</option>
+								<option>404 Sujets particuliers</option>
+								<option>405 Publications en série</option>
+								<option>406 Organisations</option>
+								<option>407 Enseignement, recherche et sujets connexes</option>
+								<option>408 Le langage chez les différents groupes</option>
+								<option>409 Traitement géographique et biographique</option>
+								<option>410 Linguistique générale</option>
+								<option>410 Linguistique</option>
+								<option>411 Systèmes d'écriture des formes standard des langues</option>
+								<option>412 Étymologie des formes standard des langues</option>
+								<option>413 Dictionnaires des formes standard des langues</option>
+								<option>414 Phonologie et phonétique des formes standard des langues</option>
+								<option>415 Grammaire et syntaxe des formes standard des langues</option>
+								<option>416 [Vacant]</option>
+								<option>417 Dialectologie. Linguistique historique (diachronique)</option>
+								<option>418 Standard usage (Prescriptive linguistics)</option>
+								<option>419 Langage structuré autre que le langage parlé et le langage é…</option>
+								<option>420 Langue anglaise. Anglo-saxon</option>
+								<option>420 Anglais et vieil anglais (anglo-saxon)</option>
+								<option>421 Écriture et phonologie de l'anglais standard</option>
+								<option>422 Étymologie de l'anglais</option>
+								<option>423 Dictionnaires d'anglais</option>
+								<option>424 [Vacant]</option>
+								<option>425 Grammaire de l'anglais standard</option>
+								<option>426 [Vacant]</option>
+								<option>427 Variantes historiques et géographiques, variantes locales</option>
+								<option>428 Usage</option>
+								<option>429 Vieil anglais</option>
+								<option>430 Langues germaniques. Allemand</option>
+								<option>431 Écriture et phonologie de l'allemand standard</option>
+								<option>432 Étymologie de l'allemand</option>
+								<option>433 Dictionnaires d'allemand</option>
+								<option>434 [Vacant]</option>
+								<option>435 Grammaire de l'allemand standard</option>
+								<option>436 [Vacant]</option>
+								<option>437 Variantes historiques et géographiques, variantes locales</option>
+								<option>438 Usage</option>
+								<option>439 Autres langages germaniques</option>
+								<option>440 Langues romanes. Français</option>
+								<option>441 Écriture et phonologie du français standard</option>
+								<option>442 Étymologie du français</option>
+								<option>443 Dictionnaires de français</option>
+								<option>444 [Vacant]</option>
+								<option>445 Grammaire français</option>
+								<option>446 [Vacant]</option>
+								<option>447 Variantes historiques et géographiques, variantes locales</option>
+								<option>448 Usage</option>
+								<option>449 Occitan Catalan, Franco-Provençal</option>
+								<option>450 Italien, sarde, dalmate, roumain, langues rhéto-romanes</option>
+								<option>451 Écriture et phonologie de l'italien standard</option>
+								<option>452 Étymologie l'italien standard</option>
+								<option>453 Dictionnaires d'italien</option>
+								<option>454 [Vacant]</option>
+								<option>455 Grammaire de l'italien standard</option>
+								<option>456 [Vacant]</option>
+								<option>457 Variantes historiques et géographiques, variantes locales</option>
+								<option>458 Usage</option>
+								<option>459 Roumain et langues rhéto-romanes</option>
+								<option>460 Langues espagnole et portugaise</option>
+								<option>461 Écriture et phonologie de l'espagnol standard</option>
+								<option>462 Étymologie l'espagnol standard</option>
+								<option>463 Dictionnaires d'espagnol</option>
+								<option>464 [Vacant]</option>
+								<option>465 Grammaire de l'espagnol standard</option>
+								<option>466 [Vacant]</option>
+								<option>467 Variantes historiques et géographiques, variantes locales</option>
+								<option>468 Usage</option>
+								<option>469 Langue portugaise</option>
+								<option>470 Langues italiques. Latin</option>
+								<option>471 Écriture et phonologie du latin classique</option>
+								<option>472 Étymologie du latin classique</option>
+								<option>473 Dictionnaires de latin</option>
+								<option>474 [Vacant]</option>
+								<option>475 Grammaire de latin classique</option>
+								<option>476 [Vacant]</option>
+								<option>477 Latin archaïque, post-classique, populaire</option>
+								<option>478 Usage du latin classique</option>
+								<option>479 autres langues italiques</option>
+								<option>480 Langues helléniques. Grec classique</option>
+								<option>481 Écriture et phonologie du grec classique</option>
+								<option>482 Étymologie du grec classique</option>
+								<option>483 Dictionnaires de grec classique</option>
+								<option>484 [Vacant]</option>
+								<option>485 Grammaire du grec classique</option>
+								<option>486 [Vacant]</option>
+								<option>487 Grec post-classique, hellénistique et byzantin</option>
+								<option>488 Usage du grec classique</option>
+								<option>489 Autres langues helléniques</option>
+								<option>490 Autres langues</option>
+								<option>491 Langues indo-européennes orientales et langues cetiques</option>
+								<option>492 Langues afro-asiatiques (chamito-sémitiques)</option>
+								<option>493 Langues afro-asiatiques non chamitiques</option>
+								<option>494 Langues ouralo-altaïques, hyperboréennes (paléo-sibériennes)…</option>
+								<option>495 Langues de l'Asie de l'Est et du Sud-Est. Langues sino-tibét…</option>
+								<option>496 Langues africaines</option>
+								<option>497 Langues indiennes et autochtones de l'Amérique du Nord</option>
+								<option>498 Langues indiennes de l'Amérique du Sud</option>
+								<option>499 Langues papoues de l'Océanie, langues malayo-polynésiennes, …</option>
+								<option>500 Généralités sur les sciences de la nature et les mathématiqu…</option>
+								<option>500 Sciences de la nature et mathématiques</option>
+								<option>501 Philosophie et théorie</option>
+								<option>502 Ouvrages divers</option>
+								<option>503 Dictionnaires, encyclopédies, tableaux comparatifs</option>
+								<option>504 [Vacant]</option>
+								<option>505 Publications en série</option>
+								<option>506 Organisations</option>
+								<option>507 Étude et enseignement</option>
+								<option>508 Histoire naturelle</option>
+								<option>509 Étude historique, géographique, relative à des personnes</option>
+								<option>510 Mathématiques</option>
+								<option>511 Principes généraux des mathématiques</option>
+								<option>512 Algèbre, théorie des nombres</option>
+								<option>513 Arithmétique</option>
+								<option>514 Topologie</option>
+								<option>515 Analyse</option>
+								<option>516 Géométrie</option>
+								<option>517 [Vacant]</option>
+								<option>518 Analyse numérique</option>
+								<option>519 Probabilités et mathématiques appliquées</option>
+								<option>520 Astronomie et sciences connexes</option>
+								<option>521 Mécanique céleste</option>
+								<option>522 Techniques, équipements, matériels</option>
+								<option>523 Astronomie descriptive</option>
+								<option>524 [Vacant]</option>
+								<option>525 Terre (géographie astronomique)</option>
+								<option>526 Géographie mathématique</option>
+								<option>527 Navigation astronomique</option>
+								<option>528 Éphémérides</option>
+								<option>529 Chronologie</option>
+								<option>530 Physique</option>
+								<option>531 Mécanique classique, mécanique des solides</option>
+								<option>532 Mécanique des fluides, mécanique des liquides</option>
+								<option>533 Mécanique des gaz</option>
+								<option>534 Son et vibrations associées, acoustique</option>
+								<option>535 Lumière et phénomènes de l'infrarouge et de l'ultraviolet</option>
+								<option>536 Chaleur</option>
+								<option>537 Électricité et électronique</option>
+								<option>538 Magnétisme</option>
+								<option>539 Physique moderne</option>
+								<option>540 Chimie et sciences connexes</option>
+								<option>541 Chimie physique et théorique</option>
+								<option>542 Techniques, procédés, appareils, équipement, matériel</option>
+								<option>543 Chimie analytique</option>
+								<option>544 Analyse qualitative</option>
+								<option>545 Analyse quantitative</option>
+								<option>546 Chimie minérale</option>
+								<option>547 Chimie organique</option>
+								<option>548 Cristallographie</option>
+								<option>549 Minéralogie</option>
+								<option>550 Sciences de la Terre</option>
+								<option>551 Géologie, météorologie, hydrologie générale</option>
+								<option>552 Pétrologie</option>
+								<option>553 Géologie économique</option>
+								<option>554 Géologie de l'Europe</option>
+								<option>555 Géologie de l'Asie</option>
+								<option>556 Géologie de l'Afrique</option>
+								<option>557 Géologie de l'Amérique du Nord</option>
+								<option>558 Géologie de l'Amérique du Sud</option>
+								<option>559 Géologie des autres parties du monde</option>
+								<option>560 Paléontologie. Paléozoologie</option>
+								<option>560 Paléontologie</option>
+								<option>561 Paléobotanique</option>
+								<option>562 Invertébrés fossiles</option>
+								<option>563 Fossiles marins et des bords de mers</option>
+								<option>564 Mollusques et molluscoïdes fossiles</option>
+								<option>565 Arthropodes fossiles</option>
+								<option>566 Cordés fossiles</option>
+								<option>567 Vertébrés à sang froid fossiles. Poissons fossiles</option>
+								<option>568 Oiseaux fossiles</option>
+								<option>569 Mammifères fossiles</option>
+								<option>570 Sciences de la vie. Biologie</option>
+								<option>571 Physiologie et sujets voisins</option>
+								<option>572 Biochimie</option>
+								<option>573 Anatomie, histologie et physiologie animales</option>
+								<option>574 [Vacant]</option>
+								<option>575 Anatomie et physiologie végétales</option>
+								<option>576 Génétique et évolution</option>
+								<option>577 Écologie</option>
+								<option>578 Histoire naturelle des organismes et sujets apparenté</option>
+								<option>579 Micro-organismes, champignons, algues</option>
+								<option>580 Plantes. Botanique</option>
+								<option>580 Plantes</option>
+								<option>581 Sujets spécifiques de la biologie végétale</option>
+								<option>582 Plantes étudiées en fonction de leurs propriétés végétatives…</option>
+								<option>583 Magnoliopsidées (Dicotylédones)</option>
+								<option>584 Liliopsidées (Monocotylédones)</option>
+								<option>585 Pinophytes (Gymnospermes), Coniférales (Conifères)</option>
+								<option>586 Cryptogames (plantes sans graine)</option>
+								<option>587 Ptéridophytes (plantes vasculaires sans graines, fougères)</option>
+								<option>588 Bryophytes (mousses)</option>
+								<option>589 [Vacant] — auparavant "Foresterie"</option>
+								<option>590 Animaux. Zoologie</option>
+								<option>590 Animaux</option>
+								<option>591 Sujets particuliers de la biologie animale</option>
+								<option>592 Invertébrés</option>
+								<option>593 Divers invertébrés marins et du littoral</option>
+								<option>594 Mollusques et molluscoïdes</option>
+								<option>595 Arthropodes</option>
+								<option>596 Chordés. Vertébrés</option>
+								<option>597 Vertébrés à sang froid. Poissons</option>
+								<option>598 Oiseaux</option>
+								<option>599 Mammifères</option>
+								<option>600 Technologie (Sciences appliquées)</option>
+								<option>601 Philosophie et théorie</option>
+								<option>602 Ouvrages divers</option>
+								<option>603 Dictionnaires, encyclopédies, ouvrages comparatifs</option>
+								<option>604 Dessin industriel. Technique des substances dangereuses</option>
+								<option>605 Publications en séries. Périodiques</option>
+								<option>606 Organisations</option>
+								<option>607 Enseignement, recherche</option>
+								<option>608 Inventions et brevets</option>
+								<option>609 Histoire et géographie</option>
+								<option>610 Sciences médicales. Médecine</option>
+								<option>610.3 Dictionnaires, encyclopédies</option>
+								<option>610.6 Organisations, gestion, professions médicales</option>
+								<option>610.7 Étude et enseignement, recherche, soins infirmiers, sujets connexes</option>
+								<option>72 Recherche médicale</option>
+								<option>610.9 Histoire et géographie de la médecine</option>
+								<option>611 Anatomie humaine, biologie des tissus, cytologie humaine</option>
+								<option>611.1 Appareil cardio-vasculaire</option>
+								<option>611.2 Appareil respiratoire</option>
+								<option>611.3 Appareil digestif</option>
+								<option>611.4 Système lymphatique et glandulaire</option>
+								<option>611.6 Appareil génito-urinaire</option>
+								<option>611.7 Organes moteurs et tégumentaires</option>
+								<option>611.8 Système nerveux et organes des sens</option>
+								<option>81 Cerveau</option>
+								<option>84 Yeux</option>
+								<option>85 Oreilles</option>
+								<option>611.9 Anatomie topographique</option>
+								<option>612 Physiologie humaine</option>
+								<option>613 Promotion de la santé</option>
+								<option>613.1 Rôle de l'environnement naturel</option>
+								<option>613.2 Diététique : aliments et boissons. Valeurs nutritives des aliments</option>
+								<option>613.4 Propreté personnelle. Soins de la personne</option>
+								<option>613.5 Rôle de l'environnement non naturel</option>
+								<option>613.6 Sujets spéciaux</option>
+								<option>62 Hygiène industrielle</option>
+								<option>66 Autodéfense</option>
+								<option>613.7 Condition physique</option>
+								<option>71 Exercice et activités physiques</option>
+								<option>79 Relaxation, repos, sommeil</option>
+								<option>613.8 Toxicomanies</option>
+								<option>613.9 Contrôle des naissances. Hygiène sexuelle</option>
+								<option>614 Santé publique et sujets connexes</option>
+								<option>615 Pharmacologie et thérapeutique</option>
+								<option>616 Maladies</option>
+								<option>617 Chirurgie et sujets connexes</option>
+								<option>618 Autres branches de la médecine. Gynécologie et obstétrique</option>
+								<option>619 Médecine expérimentale</option>
+								<option>620 Art de l’ingénieur et activités connexes</option>
+								<option>621 Physique appliquée</option>
+								<option>622 Génie minier et activités connexes</option>
+								<option>623 Génie militaire et naval</option>
+								<option>624 Génie civil</option>
+								<option>625 Chemins de fer, routes, autoroutes</option>
+								<option>626 [Vacant]</option>
+								<option>627 Génie hydraulique</option>
+								<option>628 Technique sanitaire et municipale. Génie Urbain</option>
+								<option>629 Autres branches de l'art de l'ingénieur</option>
+								<option>630 Agronomie, agriculture et activités connexes</option>
+								<option>631 Techniques spécifiques, équipement</option>
+								<option>632 Dégâts causés aux plantes, maladies et parasites</option>
+								<option>633 Champs et cultures</option>
+								<option>634 Vergers, fruits, foresterie. Arboriculture</option>
+								<option>635 Produits des jardins (Horticulture). Légumes</option>
+								<option>636 Élevage</option>
+								<option>637 Industrie laitière</option>
+								<option>638 Élevage d'insectes</option>
+								<option>639 Chasse et pêche commerciale, protection de la faune et de la…</option>
+								<option>640 Économie domestique (arts ménagers). Vie familiale</option>
+								<option>641 Nourriture et boisson</option>
+								<option>642 Repas, service à table</option>
+								<option>643 Logement et équipement ménager</option>
+								<option>644 Chauffage et autres équipements</option>
+								<option>645 Mobilier et décoration</option>
+								<option>646 Couture, Vêtement, gestion de la vie personnelle et familial…</option>
+								<option>647 Organisation des établissements hôteliers, hôtels, restauran…</option>
+								<option>648 Travaux d'entretien</option>
+								<option>649 Puériculture ; soin à domicile des handicapés et des malades…</option>
+								<option>650 Gestion de l'entreprise et services auxiliaires</option>
+								<option>651 Bureaux</option>
+								<option>652 Procédés de la communication écrite</option>
+								<option>653 Sténographie</option>
+								<option>656 [Vacant]</option>
+								<option>657 Comptabilité</option>
+								<option>658 Gestion des entreprises privées et publiques</option>
+								<option>659 Publicité et relations publiques</option>
+								<option>660 Génie chimique (chimie industrielle) et techniques connexes</option>
+								<option>661 Technologie des produits chimiques industriels (chimie lourd…</option>
+								<option>662 Technologie des explosifs, combustibles, produits dérivés</option>
+								<option>663 Technologie des boissons</option>
+								<option>664 Technologie des aliments</option>
+								<option>665 Technologie industrielle relative aux huiles, graisses, cire…</option>
+								<option>666 Technologie de la céramique et technologies annexes</option>
+								<option>667 Nettoyage, industries des colorants</option>
+								<option>668 Technologie des autres produits organiques</option>
+								<option>669 Métallurgie</option>
+								<option>670 Fabrication industrielle</option>
+								<option>671 Métallurgie industrielle</option>
+								<option>672 Métallurgie des métaux ferreux</option>
+								<option>673 Métallurgie des métaux non-ferreux</option>
+								<option>674 Technologie du bois, produits du bois, liège</option>
+								<option>675 Technologie du cuir et de la fourrure</option>
+								<option>676 Technologie de la pâte à papier et du papier</option>
+								<option>677 Textiles</option>
+								<option>678 Élastomères & produits élastomères</option>
+								<option>679 Autres produits faits de matériaux divers</option>
+								<option>680 Fabrications de produits à usages particuliers</option>
+								<option>681 Instruments de précision</option>
+								<option>682 Ferronnerie, petits travaux de forge</option>
+								<option>683 Quincaillerie, serrurerie</option>
+								<option>684 Ameublement, bricolage à la maison</option>
+								<option>685 Articles de cuir et de fourrures, produits dérivés</option>
+								<option>686 Imprimerie et activités dérivées</option>
+								<option>687 Fabrication de vêtements</option>
+								<option>688 Autres articles, technologie des emballages</option>
+								<option>689 [Vacant]</option>
+								<option>690 Bâtiments</option>
+								<option>691 Matériaux de construction</option>
+								<option>692 Techniques annexes</option>
+								<option>693 Construction de bâtiments de matériaux déterminés et à des f…</option>
+								<option>694 Utilisation du bois dans la construction, menuiserie</option>
+								<option>695 Couverture, toiture</option>
+								<option>696 Plomberie</option>
+								<option>697 Ingénierie du Chauffage, ventilation et climatisation</option>
+								<option>698 Finitions</option>
+								<option>699 [Vacant]</option>
+								<option>700 Généralités sur l’art</option>
+								<option>700 Les arts. Beaux-arts et arts décoratifs</option>
+								<option>701 Philosophie et théorie des beaux-arts et des arts décoratifs…</option>
+								<option>702 Ouvrages divers sur les beaux-arts et des arts décoratifs</option>
+								<option>703 Dictionnaires, encyclopédies des beaux-arts et des arts déco…</option>
+								<option>704 Caractères particuliers</option>
+								<option>705 Publications en série</option>
+								<option>706 Organisations et commerce</option>
+								<option>707 Étude et enseignement</option>
+								<option>708 Galeries, musées, collections d'art</option>
+								<option>709 Histoire et géographie des beaux-arts et des arts décoratifs…</option>
+								<option>710 Urbanisme. Art du paysage</option>
+								<option>711 Aménagement du territoire (urbanisme)</option>
+								<option>712 Arts du paysage</option>
+								<option>713 Architecture du paysage des voies de communication</option>
+								<option>714 Pièces d'eau dans l'architecture du paysage</option>
+								<option>715 Plantes ligneuses dans l'architecture du paysage</option>
+								<option>716 Plantes herbacées dans l'architecture du paysage</option>
+								<option>717 Mobilier urbain</option>
+								<option>718 Cimetières</option>
+								<option>719 Sites naturels</option>
+								<option>720 Architecture</option>
+								<option>721 Construction architecturale</option>
+								<option>722 Architecture de l'Antiquité et de l'Orient (jusqu'à 300)</option>
+								<option>723 Architecture médiévale (300-1399)</option>
+								<option>724 Architecture 1400-...</option>
+								<option>725 Édifices d'usage public</option>
+								<option>726 Édifices religieux</option>
+								<option>727 Édifices destinés à l'éducation et la recherche</option>
+								<option>728 Bâtiments d'habitation</option>
+								<option>729 Décoration des édifices</option>
+								<option>730 Arts plastiques. Sculpture</option>
+								<option>731 Procédés et représentations</option>
+								<option>732 Sculpture primitive et orientale, et de l'Occident ancien</option>
+								<option>733 Sculpture grecque, étrusque, romaine</option>
+								<option>734 Sculpture médiévale, 500-1400</option>
+								<option>735 Sculpture moderne, 1400-...</option>
+								<option>736 Taille, ciselage, sculpture</option>
+								<option>737 Numismatique et sigillographie</option>
+								<option>738 Céramique</option>
+								<option>739 Art du métal</option>
+								<option>740 Dessin. Arts décoratifs</option>
+								<option>740 Dessin, arts décoratifs</option>
+								<option>741 Dessin et dessins</option>
+								<option>742 Perspective</option>
+								<option>743 Le dessin et les dessins, classés par sujets</option>
+								<option>744 [Vacant]</option>
+								<option>745 Arts décoratifs, arts mineurs</option>
+								<option>746 Art et artisanat des textiles</option>
+								<option>747 Décoration d'intérieur</option>
+								<option>748 Verre</option>
+								<option>749 Mobiliers et accessoires</option>
+								<option>750 La peinture et les peintures</option>
+								<option>751 Procédés et types de peintures</option>
+								<option>752 Couleur</option>
+								<option>753 Sujets allégoriques, mythologiques, symboliques</option>
+								<option>754 Scènes de la vie quotidienne</option>
+								<option>755 Peinture religieuse</option>
+								<option>756 [Vacant]</option>
+								<option>757 Représentations de la personne. Portraits</option>
+								<option>758 Autres sujets</option>
+								<option>759 Histoire et géographie</option>
+								<option>760 Arts graphiques. La gravure et les gravures</option>
+								<option>760 Arts graphiques. La gravures et les gravures</option>
+								<option>761 Procédés en relief</option>
+								<option>762 [Vacant]</option>
+								<option>763 Lithographie</option>
+								<option>764 Chromolithographie et sérigraphie</option>
+								<option>765 Gravure sur métal</option>
+								<option>766 Manière noire, aquatinte</option>
+								<option>767 Eau-forte et pointe sèche</option>
+								<option>768 [Vacant]</option>
+								<option>769 Estampes</option>
+								<option>770 Photographie et photographies</option>
+								<option>771 Appareils, équipements, matériels</option>
+								<option>772 Procédés utilisant des sels métalliques</option>
+								<option>773 Procédés par pigments</option>
+								<option>774 Holographie</option>
+								<option>775 [Vacant]</option>
+								<option>776 Art numérique. Art par ordinateur</option>
+								<option>777 Cinématographie et Vidéographie</option>
+								<option>778 Différents domaines de la photographie</option>
+								<option>779 Photographies, recueils de photographies</option>
+								<option>780 Musique</option>
+								<option>781 Principes généraux et formes musicales</option>
+								<option>782 Musique vocale</option>
+								<option>783 Musique pour voix seule. La voix</option>
+								<option>784 Ensembles instrumentaux</option>
+								<option>785 Ensembles à un seul instrument par partie</option>
+								<option>786 Claviers, instruments mécaniques et électriques, percussions…</option>
+								<option>787 Instruments à cordes</option>
+								<option>788 Instruments à vent</option>
+								<option>789 [Vacant]</option>
+								<option>790 Loisirs et arts du spectacle. Sports</option>
+								<option>791 Représentations scéniques</option>
+								<option>792 Théâtre. Représentations sur scène</option>
+								<option>793 Jeux d'intérieur</option>
+								<option>794 Jeux d'habileté d'intérieur</option>
+								<option>795 Jeux de hasard. Jeux de cartes</option>
+								<option>796 Sports, jeux athlétiques d'extérieur</option>
+								<option>797 Sports nautiques et aériens</option>
+								<option>798 Sports équestres, courses d'animaux</option>
+								<option>799 Pêche, chasse, tir</option>
+								<option>800 Généralités sur la littérature et les techniques d’écriture</option>
+								<option>800 Littérature (Belles-lettres) et techniques d'écriture</option>
+								<option>801 Philosophie et théorie</option>
+								<option>802 Ouvrages divers</option>
+								<option>803 Dictionnaires, encyclopédies, concordances</option>
+								<option>804 [Vacant]</option>
+								<option>805 Publications en série</option>
+								<option>806 Organisations</option>
+								<option>807 Étude et enseignement</option>
+								<option>808 Rhétorique et recueils</option>
+								<option>809 Histoire, analyse, critiques littéraires générales</option>
+								<option>810 Littérature américaine de langue anglaise</option>
+								<option>811 Poésie</option>
+								<option>812 Littérature dramatique</option>
+								<option>813 Fiction</option>
+								<option>814 Essais</option>
+								<option>815 Discours</option>
+								<option>816 Correspondance</option>
+								<option>817 Humour, satire</option>
+								<option>818 Textes divers</option>
+								<option>819 [Vacant]</option>
+								<option>820 Littératures anglaise et anglo-saxonne</option>
+								<option>821 Poésie</option>
+								<option>822 Littérature dramatique</option>
+								<option>823 Fiction</option>
+								<option>824 Essais</option>
+								<option>825 Discours</option>
+								<option>826 Correspondance</option>
+								<option>827 Humour, satire</option>
+								<option>828 Textes divers</option>
+								<option>829 Anglo-saxon. Vieil anglais</option>
+								<option>830 Littérature des langues germaniques. Littérature allemande</option>
+								<option>831 Poésie</option>
+								<option>832 Littérature dramatique</option>
+								<option>833 Fiction</option>
+								<option>834 Essais</option>
+								<option>835 Discours</option>
+								<option>836 Correspondance</option>
+								<option>837 Humour, satire</option>
+								<option>838 Textes divers</option>
+								<option>839 Autres littératures germaniques</option>
+								<option>840 Littérature des langues romanes. Littérature française</option>
+								<option>841 Poésie de langue française</option>
+								<option>842 Littérature dramatique</option>
+								<option>843 Fiction</option>
+								<option>01 La nouvelle</option>
+								<option>06 La bande dessinée</option>
+								<option>08 les genres romanesques</option>
+								<option>081 Le roman historique</option>
+								<option>083 Le roman social, psychologique, réaliste</option>
+								<option>085 Le roman sentimental</option>
+								<option>087 2 Le roman à énigme, à suspense, le roman noir</option>
+								<option>087 6 La science fiction</option>
+								<option>844 Essais</option>
+								<option>845 Discours</option>
+								<option>846 Correspondance</option>
+								<option>847 Humour, satire</option>
+								<option>848 Écrits divers</option>
+								<option>849 Littératures provençales et catalanes</option>
+								<option>850 Littératures italienne, roumaine, rhéto-romane</option>
+								<option>851 Poésie</option>
+								<option>852 Littérature dramatique</option>
+								<option>853 Fiction</option>
+								<option>854 Essais</option>
+								<option>855 Discours</option>
+								<option>856 Correspondance</option>
+								<option>857 Humour, satire</option>
+								<option>858 Textes divers</option>
+								<option>859 Roumain et rhéto-roman</option>
+								<option>860 Littératures espagnole et portugaise</option>
+								<option>861 Poésie</option>
+								<option>862 Littérature dramatique</option>
+								<option>863 Fiction</option>
+								<option>864 Essais</option>
+								<option>865 Discours</option>
+								<option>866 Correspondance</option>
+								<option>867 Humour, satire</option>
+								<option>868 Textes divers</option>
+								<option>869 Portugais et brésilien</option>
+								<option>870 Littératures des langues italiques. Littérature latine</option>
+								<option>871 Poésie</option>
+								<option>872 Littérature dramatique</option>
+								<option>873 Poésie épique</option>
+								<option>874 Poésie lyrique</option>
+								<option>875 Discours</option>
+								<option>876 Correspondances</option>
+								<option>877 Littérature satirique</option>
+								<option>878 Écrits divers</option>
+								<option>879 Littératures d'autres langues italiques</option>
+								<option>880 Littératures des langues helléniques. Littérature grecque cl…</option>
+								<option>881 Poésie</option>
+								<option>882 Littérature dramatique</option>
+								<option>883 Poésie épique</option>
+								<option>884 Poésie lyrique</option>
+								<option>885 Discours</option>
+								<option>886 Correspondances</option>
+								<option>887 Littérature satirique</option>
+								<option>888 Divers écrits</option>
+								<option>889 Littérature grecque moderne</option>
+								<option>890 Littératures des autres langues</option>
+								<option>891 Littératures indo-européennes du groupe oriental et littérat…</option>
+								<option>892 Littératures afro-asiatiques (chamito-sémitique)</option>
+								<option>893 Littératures chamitique et tchadienne</option>
+								<option>894 Littératures ouralo-altaïque, paléosibérienne</option>
+								<option>895 Littérature des pays d'Asie de l'Est et du Sud-Est</option>
+								<option>896 Littératures africaines</option>
+								<option>897 Littératures des langues indiennes et autochtones d'Amérique…</option>
+								<option>898 Littératures des langues indiennes et autochtones d'Amérique…</option>
+								<option>899 Littératures des langues non austronésiennes de l'Océanie</option>
+								<option>899.3 Littérature malgache</option>
+								<option>92 Basque</option>
+								<option>992 Espéranto</option>
+								<option>900 Généralités sur la Géographie et l’Histoire</option>
+								<option>901 Philosophie et théorie de l'histoire</option>
+								<option>902 Ouvrages divers</option>
+								<option>903 Dictionnaires, encyclopédies, concordances</option>
+								<option>904 Recueils de récits d'événements</option>
+								<option>904.5 D'origine naturelle</option>
+								<option>904.7 Provoqués par l'activité humaine</option>
+								<option>905 Publications en série</option>
+								<option>906 Organisations</option>
+								<option>907 Enseignement et recherche</option>
+								<option>907.2 Recherche, historiographie</option>
+								<option>908 Histoire des différents groupes de personnes</option>
+								<option>909 Histoire du monde. Civilisation</option>
+								<option>04 Histoire des groupes raciaux, ethniques et nationaux</option>
+								<option>07 De 500 à 1450. Histoire médiévale</option>
+								<option>08 A partir de 1450. Histoire moderne</option>
+								<option>909.1 500-1199</option>
+								<option>909.2 1200-1299</option>
+								<option>909.3 1300-1399</option>
+								<option>909.4 1400-1499</option>
+								<option>909.5 1500-1599</option>
+								<option>909.6 1600-1699</option>
+								<option>909.7 1700-1799</option>
+								<option>909.8 1800-</option>
+								<option>81 1800-1899</option>
+								<option>82 1900-1999</option>
+								<option>821 1900-1919[6]</option>
+								<option>822 1920-1929</option>
+								<option>823 1930-1939</option>
+								<option>824 1940-1949[7]</option>
+								<option>825 1950-1959</option>
+								<option>826 1960-1969</option>
+								<option>827 1970-1979</option>
+								<option>828 1980-1989</option>
+								<option>829 1990-1999</option>
+								<option>83 2000-</option>
+								<option>910 Géographie et voyages</option>
+								<option>910.2 Ouvrages divers</option>
+								<option>910.3 Dictionnaires, encyclopédies, concordances</option>
+								<option>910.4 Récits de voyage</option>
+								<option>910.7 Étude et enseignement. Recherche</option>
+								<option>910.9 Traitement historique, géographie, biographique</option>
+								<option>911 Géographie historique</option>
+								<option>912 Représentations graphiques de la surface terrestre<br>et des…</option>
+								<option>913 Le monde ancien : géographie et voyages</option>
+								<option>914 Géographie de l'Europe</option>
+								<option>915 Géographie de l'Asie</option>
+								<option>916 Géographie de l'Afrique</option>
+								<option>917 Géographie de l'Amérique du Nord</option>
+								<option>918 Géographie de l'Amérique du Sud</option>
+								<option>919 Géographie des autres parties du monde<br>et des mondes extr…</option>
+								<option>920 Biographie, généalogie, emblèmes, insignes</option>
+								<option>921 Philosophes et psychologues</option>
+								<option>922 Chefs et penseurs religieux. Religieux</option>
+								<option>923 Politiciens, économistes, juristes, enseignants</option>
+								<option>924 Linguistes</option>
+								<option>925 Savants</option>
+								<option>927 Artistes. Sportifs</option>
+								<option>928 Écrivains</option>
+								<option>929 Généalogie, onomastique, emblèmes</option>
+								<option>929.1 Généalogie</option>
+								<option>929.2 Histoire des familles célèbres</option>
+								<option>929.3 Sources généalogiques</option>
+								<option>929.4 Noms de personnes. Prénoms</option>
+								<option>929.5 Épitaphes</option>
+								<option>929.6 Héraldiques</option>
+								<option>929.7 Familles royales, dynasties, ordres de chevalerie</option>
+								<option>929.8 Armoiries</option>
+								<option>88 Autographes</option>
+								<option>929.9 Autres sources permettant une identification</option>
+								<option>92 Drapeaux</option>
+								<option>930 Histoire générale du monde ancien</option>
+								<option>930 Histoire générale du monde ancien, jusqu'à 499 apr. J.-C.</option>
+								<option>931 Chine jusqu'à 420 apr. J.-C.</option>
+								<option>932 Égypte jusqu'à 640 apr. J.-C.</option>
+								<option>933 Palestine jusqu'à 70 apr. J.-C.</option>
+								<option>934 Inde jusqu'à 647 apr. J.-C.</option>
+								<option>935 Mésopotamie et Plateau Iranien jusqu'à 637 apr. J.-C.</option>
+								<option>936 Pays d'Europe situés au nord<br>et à l'ouest de la péninsule…</option>
+								<option>937 Péninsule Italique et territoires annexes jusqu'à 476 apr. J…</option>
+								<option>938 Grèce jusqu'à 323 apr. J.-C.</option>
+								<option>939 Autres parties du monde ancien</option>
+								<option>940 Histoire générale de l’Europe. Europe de l'Ouest</option>
+								<option>940 Histoire générale de l’Europe</option>
+								<option>940.1 Moyen-Age</option>
+								<option>12 Invasions 500-799</option>
+								<option>14 Féodalité 800-1099</option>
+								<option>17 Bas Moyen Age 1100-1453</option>
+								<option>18 Croisades 1100-1299</option>
+								<option>19 1300-1453</option>
+								<option>1453 à 1914</option>
+								<option>1914 à 1918</option>
+								<option>940.4 Histoire militaire de la Première Guerre mondiale</option>
+								<option>940.5 Après 1918</option>
+								<option>941 Iles britanniques</option>
+								<option>942 Angleterre et Pays de Galles</option>
+								<option>943 Europe centrale. Allemagne</option>
+								<option>944 France & Monaco</option>
+								<option>945 Italie, Saint-Marin, Vatican, Malte</option>
+								<option>946 Péninsule Ibérique. Espagne</option>
+								<option>946.9 Portugal</option>
+								<option>947 Russie et pays d'Europe de l'Est</option>
+								<option>948 Europe du Nord. Scandinavie</option>
+								<option>949 Autres pays d'Europe</option>
+								<option>950 Histoire générale de l’Asie. Orient. Extrême-Orient</option>
+								<option>951 Chine et territoires adjacents</option>
+								<option>952 Japon et îles adjacentes</option>
+								<option>953 Péninsule Arabique et territoires adjacents</option>
+								<option>954 Asie du Sud. Inde</option>
+								<option>955 Iran</option>
+								<option>956 Moyen-Orient (Proche-Orient)</option>
+								<option>957 Sibérie (Russie d'Asie)</option>
+								<option>958 Asie centrale</option>
+								<option>959 Asie du Sud-Est</option>
+								<option>960 Histoire générale de l’Afrique</option>
+								<option>961 Tunisie et Libye</option>
+								<option>962 Égypte et Soudan</option>
+								<option>963 Éthiopie et Érythrée</option>
+								<option>964 Maroc. Côtes du Nord-Ouest africain et îles au large</option>
+								<option>965 Algérie</option>
+								<option>966 Afrique occidentale et îles au large</option>
+								<option>967 Afrique centrale et îles au large</option>
+								<option>968 Afrique du Sud</option>
+								<option>969 Îles du sud de L'Océan Indien</option>
+								<option>970 Histoire générale de l’Amérique du Nord</option>
+								<option>971 Canada</option>
+								<option>972 Amérique centrale. Mexique</option>
+								<option>973 États-Unis</option>
+								<option>980 Histoire générale de l’Amérique du Sud</option>
+								<option>981 Brésil</option>
+								<option>982 Argentine</option>
+								<option>983 Chili</option>
+								<option>984 Bolivie</option>
+								<option>985 Pérou</option>
+								<option>986 Nord-Ouest de l'Amérique du Sud</option>
+								<option>987 Vénézuela</option>
+								<option>988 Guyane</option>
+								<option>988.2 Guyane française</option>
+								<option>989 Paraguay & Uruguay</option>
+								<option>990 Histoire générale des autres pays du monde. Océanie</option>
+								<option>992 [Vacant]</option>
+								<option>993 Nouvelle-Zélande</option>
+								<option>994 Australie</option>
+								<option>995 Nouvelle-Guinée. Mélanésie</option>
+								<option>996 Autres régions du Pacifique, Polynésie</option>
+								<option>997 Îles de l'Océan Atlantique</option>
+								<option>998 Îles de l'Arctique et de l’Antarctique</option>
+								<option>999 Mondes extra-terrestres</option>
+							<select>
+						</td>
                     </tr>
                     <tr>
                         <td class="criterium" data-label="Critère">Indice Dewey</td>
                         <td data-label="Opérateur"><span class="operator">classificationDewey_t</span></td>
-                        <td data-label="Exemple"><span class="example">classificationDewey_t:"700,1"</span></td>
+                        <td data-label="Exemple"><span class="example">classificationDewey_t:"700.1"</span></td>
                         <td data-label="Commentaire">Philosophie et théorie des arts (différent côte locale)</td>
                     </tr>
                     <tr>
@@ -281,31 +1438,210 @@
                         <td class="criterium" data-label="Critère">Origine créateur</td>
                         <td data-label="Opérateur"><span class="operator">creator_t</span></td>
                         <td data-label="Exemple"><span class="example">creator_t:réalisateur colombien</span></td>
-                        <td data-label="Commentaire">Réalisateur colombien (ou romancier etc.)</td>
+                        <td data-label="Commentaire">Réalisateur colombien (ou romancier etc.)
+						
+						</td>
                     </tr>
                     <tr>
                         <td class="criterium" data-label="Critère">Public</td>
                         <td data-label="Opérateur"><span class="operator">scopeLimit_s</span></td>
                         <td data-label="Exemple"><span class="example">scopeLimit_s:Adultes</span></td>
-                        <td data-label="Commentaire">Limité au contenu public adulte</td>
+                        <td data-label="Commentaire">
+							Limité au contenu public adulte<br>
+							<select>
+								<option>- Public -</option>
+								<option>Adultes</option>
+								<option>Kids</option>
+							</select>
+						</td>
+                    </tr>
+                    <tr>
+                        <td class="criterium" data-label="Critère">Type de document (EBook)</td>
+                        <td data-label="Opérateur"><span class="operator">TypeOfDocumentFacet</span></td>
+                        <td data-label="Exemple"><span class="example">TypeOfDocumentFacet:EBook OR TypeOfDocumentFacet:AudioBook</span></td>
+                        <td data-label="Commentaire">
+							Limité au contenu public adulte<br>
+							<select>
+								<option>- Type de document (EBook) -</option>
+								<option>EBook</option>
+								<option>AudioBook</option>
+							</select>
+						</td>
                     </tr>
                     <tr>
                         <td class="criterium" data-label="Critère">Support</td>
                         <td data-label="Opérateur"><span class="operator">ZMATFacet</span></td>
                         <td data-label="Exemple"><span class="example">ZMATFacet:MICROSIL_MUSIC OR ZMATFacet:MUSIC_CD</span></td>
-                        <td data-label="Commentaire">Support vinyle ou CD musique</td>
+                        <td data-label="Commentaire">Support vinyle ou CD musique<br>
+							<select>
+								<option>- Support -</option>
+								<option>ALBUM</option>
+								<option>AUDIO_BOOK_CD</option>
+								<option>BD</option>
+								<option>DOCUMENTAIRE</option>
+								<option>DVDDOC</option>
+								<option>DVDFILM</option>
+								<option>LARGE_PRINT_BOOK</option>
+								<option>MUSIC_CD</option>
+								<option>MICROSIL_MUSIC</option>
+								<option>NOTATED_MUSIC</option>
+								<option>ROMAN_CONTE</option>
+								<option>ROMAN_POLICIER</option>
+								<option>SF</option>
+							</select>
+						</td>
                     </tr>
                     <tr>
                         <td class="criterium" data-label="Critère">Catégorie</td>
                         <td data-label="Opérateur"><span class="operator">StockCategoryCode</span></td>
                         <td data-label="Exemple"><span class="example">StockCategoryCode:JX</span></td>
-                        <td data-label="Commentaire">Jeux</td>
+                        <td data-label="Commentaire">
+							Jeux<br>
+							<select>
+								<option>- Catégorie -</option>
+								<option>AL	Album</option>
+								<option>BA	Bande-dessinée Ado</option>
+								<option>BB	Bébé</option>
+								<option>BD	Bande-dessinée</option>
+								<option>BJ	Bande-dessinée Jeunesse</option>
+								<option>C0	C-D Tradition</option>
+								<option>C1	C-D Jazz</option>
+								<option>C2	C-D Pop-Rock</option>
+								<option>C3	C-D Classique</option>
+								<option>C4	C-D Contemporain</option>
+								<option>C5	C-D Film</option>
+								<option>C9	C-D Chanson française</option>
+								<option>CC	C-D Contes Jeunesse</option>
+								<option>CD	C-D Documentaire</option>
+								<option>CE	C-D Jeunesse</option>
+								<option>CF	C-D Fiction et contes</option>
+								<option>CH	C-D Humour</option>
+								<option>CJ	C-D Fiction Jeunesse</option>
+								<option>CM	C-D Musique</option>
+								<option>CU	C-D Documentaire Jeunesse</option>
+								<option>D1	DVD-Vidéo Documentaire pret</option>
+								<option>D2	DVD-Vidéo Documentaire pret/consultation</option>
+								<option>D3	DVD-Vidéo Fiction pret</option>
+								<option>D4	DVD-Vidéo Fiction pret/consultation</option>
+								<option>D5	DVD-Blu Ray Fiction Prêt</option>
+								<option>D6	DVD Documentaire Jeunesse Prêt</option>
+								<option>D7	DVD Documentaire Jeunesse P+C</option>
+								<option>D8	DVD Fiction Jeunesse Prêt</option>
+								<option>D9	DVD Fiction Jeunesse P+C</option>
+								<option>DJ	Documentaire Jeunesse</option>
+								<option>DO	Documentaire</option>
+								<option>GD	Grands caractères Documentaire</option>
+								<option>GF	Grands caractères Fiction</option>
+								<option>GJ	Grands caractères Jeunesse</option>
+								<option>IN	Ressource Internet</option>
+								<option>JA	Jeux adultes</option>
+								<option>JD	Revue documentaire</option>
+								<option>JE	Jeux enfants</option>
+								<option>JF	Revue fiction</option>
+								<option>JJ	Revue Documentaire Jeunesse</option>
+								<option>JV	Jeu vidéo</option>
+								<option>L1	Méthode de langue audio</option>
+								<option>L3	Méthode de langue CD-ROM/DVD-ROM</option>
+								<option>L5	Méthode de langue DVD-Vidéo pret</option>
+								<option>LA	Contes adultes</option>
+								<option>LB	Livre en braille</option>
+								<option>LC	Conte Jeunesse</option>
+								<option>LD	Livre CD Documentaire Jeunesse</option>
+								<option>LK	Livre Cassette fiction</option>
+								<option>LM	Livre Cassette Documentaire</option>
+								<option>LT	Livre CD Texte Jeunesse</option>
+								<option>LU	Livre CD documentaire</option>
+								<option>LX	Livre CD Texte</option>
+								<option>M1	Méthode de musique CD-ROM/DVD-ROM</option>
+								<option>M2	Méthode de musique DVD</option>
+								<option>M4	Méthode de musique Livre</option>
+								<option>M5	Méthode de musique Partition</option>
+								<option>M6	Méthode de musique Vidéo</option>
+								<option>ME	Matériel d'écoute</option>
+								<option>OD	DVD-ROM documentaire</option>
+								<option>PA	Partition</option>
+								<option>R1	Première lecture</option>
+								<option>RA	Roman Ado</option>
+								<option>RD	CD-ROM Documentaire</option>
+								<option>RF	CD-ROM Fiction</option>
+								<option>RI	Roman illustré</option>
+								<option>RJ	Roman Jeunesse</option>
+								<option>RO	Roman</option>
+								<option>RP	Roman policier</option>
+								<option>SF	Roman de science fiction</option>
+								<option>U1	Usuel Vidéo Docmentaire</option>
+								<option>U4	Usuel DVD-Vidéo Documentaire</option>
+								<option>UD	Usuel Documentaire</option>
+								<option>UJ	Usuel Documentaire Jeunesse</option>
+								<option>UL	Usuel Méthode de langue</option>
+								<option>UR	Usuel CD-ROM</option>
+								<option>V1	Vidéo Documentaire pret</option>
+								<option>V2	Vidéo Documentaire pret/consultation</option>
+								<option>V4	Vidéo fiction pret/consultation</option>
+								<option>VJ	Jeu vidéo Jeunesse</option>
+								<option>XX	Document inconnu</option>
+								<option>Y0	Disque vinyle Tradition</option>
+								<option>Y1	Disque vinyle Jazz</option>
+								<option>Y2	Disque vinyle Pop-Rock</option>
+								<option>Y3	Disque vinyle Classique</option>
+								<option>Y4	Disque vinyle Contemporain</option>
+								<option>Y5	Disque vinyle Film</option>
+								<option>Y9	Disque vinyle Chanson française</option>
+								<option>YC	Disque vinyle Contes</option>
+								<option>YD	Disque vinyle Documentaire</option>
+								<option>YE	Disque vinyle Chant enfant</option>
+								<option>YH	Disque vinyle Humour</option>
+								<option>YM	Disque vinyle Musique</option>
+							</select>
+						</td>
                     </tr>
                     <tr>
                         <td class="criterium" data-label="Critère">Sous-localisation</td>
                         <td data-label="Opérateur"><span class="operator">StockSublocationCode</span></td>
                         <td data-label="Exemple"><span class="example">StockSublocationCode:JVO</span></td>
-                        <td data-label="Commentaire">Fonds jeux vidéo</td>
+                        <td data-label="Commentaire">
+							Espace jeux vidéo <br>
+							<select>
+								<option>- Sous-localisation -</option>
+								<option>A&nbsp;&nbsp; Section adulte</option>
+								<option>ADM Pole administration</option>
+								<option>AEC Espace Ecrivains Combattants</option>
+								<option>ART Espace Arts</option>
+								<option>BD&nbsp; Espace BD, Manga, Comics</option>
+								<option>BDD Espace BD Documentaire</option>
+								<option>CIN Espace Cinéma</option>
+								<option>CON Espace Contes</option>
+								<option>ECO Espace Economie-Entreprise</option>
+								<option>EMP Espace Emploi. 1er Côté Parvis</option>
+								<option>GCE Espace Grands caractères - Ecrits sonores</option>
+								<option>HIS Espace Histoire-Géographie</option>
+								<option>INF Espace Informatique</option>
+								<option>J&nbsp;&nbsp; Section jeunesse</option>
+								<option>JEU	Pole jeunesse</option>
+								<option>JVO	Espace Jeux vidéo</option>
+								<option>LAN	Espace Langues</option>
+								<option>LIT	Espace Littératures</option>
+								<option>LOC	Espace Fonds local</option>
+								<option>LOI	Espace Loisirs</option>
+								<option>LUD	Ludothèque Renoir</option>
+								<option>MAD	Magasin Adulte</option>
+								<option>MAG	Magasin Médiathèque</option>
+								<option>MDA	Centre de documentation - MDA</option>
+								<option>MEC	Magasin Ecrivains Combattants</option>
+								<option>MED	Espace Société : Médias et monde du livre</option>
+								<option>MUS	Espace Musique</option>
+								<option>NAT	Espace Nature et environnement</option>
+								<option>PAR	Partothèque Conservatoire</option>
+								<option>PHI	Espace Philosophies</option>
+								<option>PRE	Espace Presse, actualité</option>
+								<option>REF	Espace Références</option>
+								<option>REL	Espace Religions</option>
+								<option>ROM	Espace Romans</option>
+								<option>SCI	Espace Sciences et techniques</option>
+								<option>SOC	Espace Sciences sociales</option>
+								<option>XX&nbsp; Inconnu</option>
+					</select>
+						</td>
                     </tr>
                 </tbody>
             </table>
@@ -323,7 +1659,7 @@
         </section>
         
         <footer>
-            <p>Documentation des critères de recherche • Dernière mise à jour : Mars 2024</p>
+            <p>Documentation des critères de recherche • Dernière mise à jour : Janvier 2026</p>
         </footer>
     </div>
 

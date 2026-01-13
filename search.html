@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Critères de Recherche - Documentation</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        option {
+            font-family: Consolas;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #2c3e50, #4a6491);
+            color: white;
+            padding: 30px 40px;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .intro {
+            padding: 25px 40px;
+            background-color: #f8f9fa;
+            border-bottom: 1px solid #eaeaea;
+        }
+        
+        .intro p {
+            margin-bottom: 15px;
+        }
+        
+        .highlight {
+            background-color: #e8f4fc;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 4px solid #3498db;
+            margin: 20px 0;
+        }
+        
+        .table-container {
+            padding: 20px 40px 40px;
+            overflow-x: auto;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        
+        thead {
+            background-color: #2c3e50;
+            color: white;
+        }
+        
+        th {
+            padding: 18px 15px;
+            text-align: left;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+        
+        tbody tr {
+            border-bottom: 1px solid #e0e0e0;
+            transition: background-color 0.2s;
+        }
+        
+        tbody tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        
+        tbody tr:hover {
+            background-color: #f0f7ff;
+        }
+        
+        td {
+            padding: 16px 15px;
+            vertical-align: top;
+        }
+        
+        .criterium {
+            font-weight: 600;
+            color: #2c3e50;
+        }
+        
+        .operator {
+            font-family: monospace;
+            background-color: #f1f1f1;
+            padding: 3px 8px;
+            border-radius: 3px;
+            color: #d35400;
+            font-weight: 600;
+        }
+        
+        .example {
+            font-family: monospace;
+            background-color: #f9f9f9;
+            padding: 5px 10px;
+            border-radius: 4px;
+            border-left: 3px solid #3498db;
+            font-size: 0.95rem;
+            word-break: break-word;
+            min-height: 36px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .formula-container {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #f8f9fa;
+            border-radius: 4px;
+            border: 1px solid #e0e0e0;
+        }
+        
+        .formula {
+            font-family: monospace;
+            font-size: 1rem;
+            color: #2c3e50;
+            font-weight: 600;
+        }
+        
+        .copy-btn {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            margin-left: 10px;
+            transition: background-color 0.2s;
+        }
+        
+        .copy-btn:hover {
+            background-color: #2980b9;
+        }
+        
+        select {
+            width: 100%;
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 0.95rem;
+            background-color: white;
+            margin-top: 5px;
+            cursor: pointer;
+        }
+        
+        select:hover {
+            border-color: #3498db;
+        }
+        
+        .operators-section {
+            padding: 20px 40px;
+            background-color: #2c3e50;
+            color: white;
+            margin-top: 20px;
+        }
+        
+        .operators-section h2 {
+            margin-bottom: 15px;
+            color: #ecf0f1;
+        }
+        
+        .boolean-operator {
+            display: inline-block;
+            background-color: #e74c3c;
+            color: white;
+            padding: 8px 15px;
+            margin: 5px 10px 5px 0;
+            border-radius: 4px;
+            font-family: monospace;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #7f8c8d;
+            font-size: 0.9rem;
+            border-top: 1px solid #eee;
+        }
+        
+        @media (max-width: 768px) {
+            header, .intro, .table-container, .operators-section {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            th, td {
+                padding: 12px 8px;
+            }
+            
+            .table-container {
+                padding: 0 10px 20px;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            th, td {
+                display: block;
+                width: 100%;
+            }
+            
+            tr {
+                display: block;
+                margin-bottom: 20px;
+                border: 1px solid #ddd;
+                border-radius: 5px;
+                padding: 10px;
+            }
+            
+            thead {
+                display: none;
+            }
+            
+            td:before {
+                content: attr(data-label);
+                font-weight: bold;
+                display: block;
+                margin-bottom: 5px;
+                color: #2c3e50;
+            }
+            
+            .copy-btn {
+                margin-top: 5px;
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Critères de Recherche Documentaire</h1>
+            <p class="subtitle">Guide des opérateurs de recherche et exemples d'utilisation pour interroger le catalogue</p>
+        </header>
+        
+        <section class="intro">
+            <p>Cette page présente les différents critères de recherche disponibles pour interroger la base de données documentaire. Chaque critère est associé à un opérateur spécifique et peut être utilisé avec des opérateurs booléens pour affiner les recherches.</p>
+            
+            <div class="highlight">
+                <p><strong>Mode d'emploi :</strong> Utilisez la syntaxe <code>opérateur:valeur</code> dans le champ de recherche. Sélectionnez une option dans les listes déroulantes pour générer automatiquement la formule correspondante.</p>
+            </div>
+        </section>
+        
+        <section class="table-container">
+            <h2>Tableau des critères de recherche</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Critère</th>
+                        <th>Opérateur</th>
+                        <th>Exemple / Formule générée</th>
+                        <th>Commentaire</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="criterium" data-label="Critère">Auteur</td>
+                        <td data-label="Opérateur"><span class="operator">author_t</span></td>
+                        <td data-label="Exemple">
+                            <div class="example">author_t:philippe besson 1967</div>
+                        </td>
+                        <td data-label="Commentaire">Année facultative (pour désambiguïsation si homonyme)</td>
+                    </tr>
+                    <tr>
+                        <td class="criterium" data-label="Critère">Thème</td>
+                        <td data-label="Opérateur"><span class="operator">subject_t</span></td>
+                        <td data-label="Exemple">
+                            <div class="example">subject_t:Psychologie du travail</div>
+                            <select id="theme-select">
+                                <option value="">- Thème (liste incomplète) -</option>
+                                <option value="Animation Etats-Unis">Animation Etats-Unis</option>
+                                <option value="Arts & Loisirs créatifs">Arts & Loisirs créatifs</option>
+                                <option value="Baccalauréat Examens, questions, etc">Baccalauréat Examens, questions, etc</option>
+                                <option value="Bien-être">Bien-être</option>
+                                <option value="Bureautique">Bureautique</option>
+                                <option value="Chansons acc. guitare Partitions">Chansons acc. guitare Partitions</option>
+                                <option value="Chansons acc. piano Partitions">Chansons acc. piano Partitions</option>
+                                <option value="Cinéma Allemagne">Cinéma Allemagne</option>
+                                <option value="Cinéma Etats-Unis">Cinéma Etats-Unis</option>
+                                <option value="Cinéma France">Cinéma France</option>
+                                <option value="Cinéma Grande-Bretagne">Cinéma Grande-Bretagne</option>
+                                <option value="Cinéma Italie">Cinéma Italie</option>
+                                <option value="Cinéma Japon">Cinéma Japon</option>
+                                <option value="Contes allemands Ouvrages pour la jeunesse">Contes allemands Ouvrages pour la jeunesse</option>
+                                <option value="Contes français Ouvrages pour la jeunesse">Contes français Ouvrages pour la jeunesse</option>
+                                <option value="Contes Ouvrages pour la jeunesse">Contes Ouvrages pour la jeunesse</option>
+                                <option value="Couture Manuels d'amateurs">Couture Manuels d'amateurs</option>
+                                <option value="Documentaires">Documentaires</option>
+                                <option value="Guerre mondiale">Guerre mondiale</option>
+                                <option value="Humour">Humour</option>
+                                <option value="Informatique & Sécurité">Informatique & Sécurité</option>
+                                <option value="Jardinage">Jardinage</option>
+                                <option value="Jeux de cartes">Jeux de cartes</option>
+                                <option value="Jeux d'intérieur">Jeux d'intérieur</option>
+                                <option value="Livres-jeux Ouvrages pour la jeunesse">Livres-jeux Ouvrages pour la jeunesse</option>
+                                <option value="Métiers">Métiers</option>
+                                <option value="Multimédia">Multimédia</option>
+                                <option value="Musique">Musique</option>
+                                <option value="Musique Brésil">Musique Brésil</option>
+                                <option value="Musique Etats-Unis">Musique Etats-Unis</option>
+                                <option value="Musique Jamaïque">Musique Jamaïque</option>
+                                <option value="Passeport linguistique">Passeport linguistique</option>
+                                <option value="Photographie">Photographie</option>
+                                <option value="Piano, musique de Partitions">Piano, musique de Partitions</option>
+                                <option value="Poésie Ouvrages pour la jeunesse">Poésie Ouvrages pour la jeunesse</option>
+                                <option value="Puzzles">Puzzles</option>
+                                <option value="Réalisation de soi">Réalisation de soi</option>
+                                <option value="Romans">Romans</option>
+                                <option value="Romans étrangers">Romans étrangers</option>
+                                <option value="Romans francophones">Romans francophones</option>
+                                <option value="Séries télévisées Etats-Unis">Séries télévisées Etats-Unis</option>
+                                <option value="Séries télévisées France">Séries télévisées France</option>
+                                <option value="Séries télévisées Grande-Bretagne">Séries télévisées Grande-Bretagne</option>
+                                <option value="Sport & Fitness">Sport & Fitness</option>
+                                <option value="Théâtre France 20e siècle">Théâtre France 20e siècle</option>
+                                <option value="Vie Professionnelle">Vie Professionnelle</option>
+                            </select>
+                            <div class="formula-container" id="theme-formula" style="display: none;">
+                                <span class="formula"></span>
+                                <button class="copy-btn">Copier</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="criterium" data-label="Critère">Genre</td>
+                        <td data-label="Opérateur"><span class="operator">genre_t</span></td>
+                        <td data-label="Exemple">
+                            <div class="example">genre_t:drame</div>
+                        </td>
+                        <td data-label="Commentaire">Genre (comme référencé dans catalogue)</td>
+                    </tr>
+                    <tr>
+                        <td class="criterium" data-label="Critère">Classe Dewey</td>
+                        <td data-label="Opérateur"><span class="operator">identifier_s</span></td>
+                        <td data-label="Exemple">
+                            <div class="example">identifier_s:"700"</div>
+                            <select id="dewey-select">
+                                <option value="">- Classe Dewey -</option>
+                                <option value="000">000 Généralités sur l'informatique, l'information, ouvrages géné...</option>
+                                <option value="001">001 Connaissance</option>
+                                <option value="002">002 Livre (écrits, bibliothèques, et sujets en rapport aux livre...</option>
+                                <option value="003">003 Systèmes</option>
+                                <option value="004">004 Traitement de données et Informatique</option>
+                                <option value="005">005 Programmation informatique, Logiciels et donnée</option>
+                                <option value="006">006 Applications informatique</option>
+                                <option value="700">700 Les arts. Beaux-arts et arts décoratifs</option>
+                                <option value="701">701 Philosophie et théorie des beaux-arts et des arts décoratifs</option>
+                                <option value="702">702 Ouvrages divers sur les beaux-arts et des arts décoratifs</option>
+                                <option value="703">703 Dictionnaires, encyclopédies des beaux-arts et des arts déco</option>
+                                <option value="704">704 Caractères particuliers</option>
+                                <option value="705">705 Publications en série</option>
+                                <option value="706">706 Organisations et commerce</option>
+                                <option value="707">707 Étude et enseignement</option>
+                                <option value="708">708 Galeries, musées, collections d'art</option>
+                                <option value="709">709 Histoire et géographie des beaux-arts et des arts décoratifs</option>
+                                <option value="800">800 Littérature (Belles-lettres) et techniques d'écriture</option>
+                                <option value="801">801 Philosophie et théorie</option>
+                                <option value="802">802 Ouvrages divers</option>
+                                <option value="803">803 Dictionnaires, encyclopédies, concordances</option>
+                                <option value="900">900 Généralités sur la Géographie et l'Histoire</option>
+                            </select>
+                            <div class="formula-container" id="dewey-formula" style="display: none;">
+                                <span class="formula"></span>
+                                <button class="copy-btn">Copier</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="criterium" data-label="Critère">Indice Dewey</td>
+                        <td data-label="Opérateur"><span class="operator">classificationDewey_t</span></td>
+                        <td data-label="Exemple">
+                            <div class="example">classificationDewey_t:"700.1"</div>
+                        </td>
+                        <td data-label="Commentaire">Philosophie et théorie des arts (différent côte locale)</td>
+                    </tr>
+                    <tr>
+                        <td class="criterium" data-label="Critère">Côte locale</td>
+                        <td data-label="Opérateur"><span class="operator">StockShelfmark</span></td>
+                        <td data-label="Exemple">
+                            <div class="example">StockShelfmark:"700.1"</div>
+                        </td>
+                        <td data-label="Commentaire">Philosophie et théorie des arts (si plusieurs indices)</td>
+                    </tr>
+                    <tr>
+                        <td class="criterium" data-label="Critère">Titre</td>
+                        <td data-label="Opérateur"><span class="operator">title_t</span></td>
+                        <td data-label="Exemple">
+                            <div class="example">title_t:grand rouge</div>
+                        </td>
+                        <td data-label="Commentaire">Termes "grand" et "rouge" présents dans le titre</td>
+                    </tr>
+                    <tr>
+                        <td class="criterium" data-label="Critère">Origine créateur</td>
+                        <td data-label="Opérateur"><span class="operator">creator_t</span></td>
+                        <td data-label="Exemple">
+                            <div class="example">creator_t:réalisateur colombien</div>
+                        </td>
+                        <td data-label="Commentaire">Réalisateur colombien (ou romancier etc.)</td>
+                    </tr>
+                    <tr>
+                        <td class="criterium" data-label="Critère">Public</td>
+                        <td data-label="Opérateur"><span class="operator">scopeLimit_s</span></td>
+                        <td data-label="Exemple">
+                            <div class="example">scopeLimit_s:Adultes</div>
+                            <select id="public-select">
+                                <option value="">- Public -</option>
+                                <option value="Adultes">Adultes</option>
+                                <option value="Kids">Kids</option>
+                            </select>
+                            <div class="formula-container" id="public-formula" style="display: none;">
+                                <span class="formula"></span>
+                                <button class="copy-btn">Copier</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="criterium" data-label="Critère">Type de document (EBook)</td>
+                        <td data-label="Opérateur"><span class="operator">TypeOfDocumentFacet</span></td>
+                        <td data-label="Exemple">
+                            <div class="example">TypeOfDocumentFacet:EBook OR TypeOfDocumentFacet:AudioBook</div>
+                            <select id="document-type-select">
+                                <option value="">- Type de document (EBook) -</option>
+                                <option value="EBook">EBook</option>
+                                <option value="AudioBook">AudioBook</option>
+                            </select>
+                            <div class="formula-container" id="document-type-formula" style="display: none;">
+                                <span class="formula"></span>
+                                <button class="copy-btn">Copier</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="criterium" data-label="Critère">Support</td>
+                        <td data-label="Opérateur"><span class="operator">ZMATFacet</span></td>
+                        <td data-label="Exemple">
+                            <div class="example">ZMATFacet:MICROSIL_MUSIC OR ZMATFacet:MUSIC_CD</div>
+                            <select id="support-select">
+                                <option value="">- Support -</option>
+                                <option value="ALBUM">ALBUM</option>
+                                <option value="AUDIO_BOOK_CD">AUDIO_BOOK_CD</option>
+                                <option value="BD">BD</option>
+                                <option value="DOCUMENTAIRE">DOCUMENTAIRE</option>
+                                <option value="DVDDOC">DVDDOC</option>
+                                <option value="DVDFILM">DVDFILM</option>
+                                <option value="LARGE_PRINT_BOOK">LARGE_PRINT_BOOK</option>
+                                <option value="MUSIC_CD">MUSIC_CD</option>
+                                <option value="MICROSIL_MUSIC">MICROSIL_MUSIC</option>
+                                <option value="NOTATED_MUSIC">NOTATED_MUSIC</option>
+                                <option value="ROMAN_CONTE">ROMAN_CONTE</option>
+                                <option value="ROMAN_POLICIER">ROMAN_POLICIER</option>
+                                <option value="SF">SF</option>
+                            </select>
+                            <div class="formula-container" id="support-formula" style="display: none;">
+                                <span class="formula"></span>
+                                <button class="copy-btn">Copier</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="criterium" data-label="Critère">Catégorie</td>
+                        <td data-label="Opérateur"><span class="operator">StockCategoryCode</span></td>
+                        <td data-label="Exemple">
+                            <div class="example">StockCategoryCode:JX</div>
+                            <select id="categorie-select">
+                                <option value="">- Catégorie -</option>
+                                <option value="AL">AL Album</option>
+                                <option value="BA">BA Bande-dessinée Ado</option>
+                                <option value="BB">BB Bébé</option>
+                                <option value="BD">BD Bande-dessinée</option>
+                                <option value="BJ">BJ Bande-dessinée Jeunesse</option>
+                                <option value="C0">C0 C-D Tradition</option>
+                                <option value="C1">C1 C-D Jazz</option>
+                                <option value="C2">C2 C-D Pop-Rock</option>
+                                <option value="C3">C3 C-D Classique</option>
+                                <option value="C4">C4 C-D Contemporain</option>
+                                <option value="C5">C5 C-D Film</option>
+                                <option value="C9">C9 C-D Chanson française</option>
+                                <option value="CC">CC C-D Contes Jeunesse</option>
+                                <option value="CD">CD C-D Documentaire</option>
+                                <option value="CE">CE C-D Jeunesse</option>
+                                <option value="CF">CF C-D Fiction et contes</option>
+                                <option value="CH">CH C-D Humour</option>
+                                <option value="CJ">CJ C-D Fiction Jeunesse</option>
+                                <option value="CM">CM C-D Musique</option>
+                                <option value="CU">CU C-D Documentaire Jeunesse</option>
+                                <option value="D1">D1 DVD-Vidéo Documentaire pret</option>
+                                <option value="D2">D2 DVD-Vidéo Documentaire pret/consultation</option>
+                                <option value="D3">D3 DVD-Vidéo Fiction pret</option>
+                                <option value="D4">D4 DVD-Vidéo Fiction pret/consultation</option>
+                                <option value="D5">D5 DVD-Blu Ray Fiction Prêt</option>
+                                <option value="D6">D6 DVD Documentaire Jeunesse Prêt</option>
+                                <option value="D7">D7 DVD Documentaire Jeunesse P+C</option>
+                                <option value="D8">D8 DVD Fiction Jeunesse Prêt</option>
+                                <option value="D9">D9 DVD Fiction Jeunesse P+C</option>
+                                <option value="DJ">DJ Documentaire Jeunesse</option>
+                                <option value="DO">DO Documentaire</option>
+                                <option value="GD">GD Grands caractères Documentaire</option>
+                                <option value="GF">GF Grands caractères Fiction</option>
+                                <option value="GJ">GJ Grands caractères Jeunesse</option>
+                                <option value="IN">IN Ressource Internet</option>
+                                <option value="JA">JA Jeux adultes</option>
+                                <option value="JD">JD Revue documentaire</option>
+                                <option value="JE">JE Jeux enfants</option>
+                                <option value="JF">JF Revue fiction</option>
+                                <option value="JJ">JJ Revue Documentaire Jeunesse</option>
+                                <option value="JV">JV Jeu vidéo</option>
+                                <option value="L1">L1 Méthode de langue audio</option>
+                                <option value="L3">L3 Méthode de langue CD-ROM/DVD-ROM</option>
+                                <option value="L5">L5 Méthode de langue DVD-Vidéo pret</option>
+                                <option value="LA">LA Contes adultes</option>
+                                <option value="LB">LB Livre en braille</option>
+                                <option value="LC">LC Conte Jeunesse</option>
+                                <option value="LD">LD Livre CD Documentaire Jeunesse</option>
+                                <option value="LK">LK Livre Cassette fiction</option>
+                                <option value="LM">LM Livre Cassette Documentaire</option>
+                                <option value="LT">LT Livre CD Texte Jeunesse</option>
+                                <option value="LU">LU Livre CD documentaire</option>
+                                <option value="LX">LX Livre CD Texte</option>
+                                <option value="M1">M1 Méthode de musique CD-ROM/DVD-ROM</option>
+                                <option value="M2">M2 Méthode de musique DVD</option>
+                                <option value="M4">M4 Méthode de musique Livre</option>
+                                <option value="M5">M5 Méthode de musique Partition</option>
+                                <option value="M6">M6 Méthode de musique Vidéo</option>
+                                <option value="ME">ME Matériel d'écoute</option>
+                                <option value="OD">OD DVD-ROM documentaire</option>
+                                <option value="PA">PA Partition</option>
+                                <option value="R1">R1 Première lecture</option>
+                                <option value="RA">RA Roman Ado</option>
+                                <option value="RD">RD CD-ROM Documentaire</option>
+                                <option value="RF">RF CD-ROM Fiction</option>
+                                <option value="RI">RI Roman illustré</option>
+                                <option value="RJ">RJ Roman Jeunesse</option>
+                                <option value="RO">RO Roman</option>
+                                <option value="RP">RP Roman policier</option>
+                                <option value="SF">SF Roman de science fiction</option>
+                                <option value="U1">U1 Usuel Vidéo Docmentaire</option>
+                                <option value="U4">U4 Usuel DVD-Vidéo Documentaire</option>
+                                <option value="UD">UD Usuel Documentaire</option>
+                                <option value="UJ">UJ Usuel Documentaire Jeunesse</option>
+                                <option value="UL">UL Usuel Méthode de langue</option>
+                                <option value="UR">UR Usuel CD-ROM</option>
+                                <option value="V1">V1 Vidéo Documentaire pret</option>
+                                <option value="V2">V2 Vidéo Documentaire pret/consultation</option>
+                                <option value="V4">V4 Vidéo fiction pret/consultation</option>
+                                <option value="VJ">VJ Jeu vidéo Jeunesse</option>
+                                <option value="XX">XX Document inconnu</option>
+                                <option value="Y0">Y0 Disque vinyle Tradition</option>
+                                <option value="Y1">Y1 Disque vinyle Jazz</option>
+                                <option value="Y2">Y2 Disque vinyle Pop-Rock</option>
+                                <option value="Y3">Y3 Disque vinyle Classique</option>
+                                <option value="Y4">Y4 Disque vinyle Contemporain</option>
+                                <option value="Y5">Y5 Disque vinyle Film</option>
+                                <option value="Y9">Y9 Disque vinyle Chanson française</option>
+                                <option value="YC">YC Disque vinyle Contes</option>
+                                <option value="YD">YD Disque vinyle Documentaire</option>
+                                <option value="YE">YE Disque vinyle Chant enfant</option>
+                                <option value="YH">YH Disque vinyle Humour</option>
+                                <option value="YM">YM Disque vinyle Musique</option>
+                            </select>
+                            <div class="formula-container" id="categorie-formula" style="display: none;">
+                                <span class="formula"></span>
+                                <button class="copy-btn">Copier</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="criterium" data-label="Critère">Sous-localisation</td>
+                        <td data-label="Opérateur"><span class="operator">StockSublocationCode</span></td>
+                        <td data-label="Exemple">
+                            <div class="example">StockSublocationCode:JVO</div>
+                            <select id="localisation-select">
+                                <option value="">- Sous-localisation -</option>
+                                <option value="A">A Section adulte</option>
+                                <option value="ADM">ADM Pole administration</option>
+                                <option value="AEC">AEC Espace Ecrivains Combattants</option>
+                                <option value="ART">ART Espace Arts</option>
+                                <option value="BD">BD Espace BD, Manga, Comics</option>
+                                <option value="BDD">BDD Espace BD Documentaire</option>
+                                <option value="CIN">CIN Espace Cinéma</option>
+                                <option value="CON">CON Espace Contes</option>
+                                <option value="ECO">ECO Espace Economie-Entreprise</option>
+                                <option value="EMP">EMP Espace Emploi. 1er Côté Parvis</option>
+                                <option value="GCE">GCE Espace Grands caractères - Ecrits sonores</option>
+                                <option value="HIS">HIS Espace Histoire-Géographie</option>
+                                <option value="INF">INF Espace Informatique</option>
+                                <option value="J">J Section jeunesse</option>
+                                <option value="JEU">JEU Pole jeunesse</option>
+                                <option value="JVO">JVO Espace Jeux vidéo</option>
+                                <option value="LAN">LAN Espace Langues</option>
+                                <option value="LIT">LIT Espace Littératures</option>
+                                <option value="LOC">LOC Espace Fonds local</option>
+                                <option value="LOI">LOI Espace Loisirs</option>
+                                <option value="LUD">LUD Ludothèque Renoir</option>
+                                <option value="MAD">MAD Magasin Adulte</option>
+                                <option value="MAG">MAG Magasin Médiathèque</option>
+                                <option value="MDA">MDA Centre de documentation - MDA</option>
+                                <option value="MEC">MEC Magasin Ecrivains Combattants</option>
+                                <option value="MED">MED Espace Société : Médias et monde du livre</option>
+                                <option value="MUS">MUS Espace Musique</option>
+                                <option value="NAT">NAT Espace Nature et environnement</option>
+                                <option value="PAR">PAR Partothèque Conservatoire</option>
+                                <option value="PHI">PHI Espace Philosophies</option>
+                                <option value="PRE">PRE Espace Presse, actualité</option>
+                                <option value="REF">REF Espace Références</option>
+                                <option value="REL">REL Espace Religions</option>
+                                <option value="ROM">ROM Espace Romans</option>
+                                <option value="SCI">SCI Espace Sciences et techniques</option>
+                                <option value="SOC">SOC Espace Sciences sociales</option>
+                                <option value="XX">XX Inconnu</option>
+                            </select>
+                            <div class="formula-container" id="localisation-formula" style="display: none;">
+                                <span class="formula"></span>
+                                <button class="copy-btn">Copier</button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        
+        <section class="operators-section">
+            <h2>Opérateurs booléens disponibles</h2>
+            <p>Ces opérateurs permettent de combiner plusieurs critères de recherche :</p>
+            <div>
+                <span class="boolean-operator">AND</span>
+                <span class="boolean-operator">OR</span>
+                <span class="boolean-operator">NOT</span>
+            </div>
+            <p style="margin-top: 15px; opacity: 0.9;">Exemple d'utilisation combinée : <code>author_t:dumas AND subject_t:histoire</code></p>
+        </section>
+        
+        <footer>
+            <p>Documentation des critères de recherche • Dernière mise à jour : Janvier 2026</p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Configuration des sélecteurs et leurs opérateurs correspondants
+            const selectConfig = {
+                'theme-select': {
+                    operator: 'subject_t',
+                    formulaId: 'theme-formula'
+                },
+                'dewey-select': {
+                    operator: 'identifier_s',
+                    formulaId: 'dewey-formula',
+                    isCode: true // Pour extraire seulement le code numérique
+                },
+                'public-select': {
+                    operator: 'scopeLimit_s',
+                    formulaId: 'public-formula'
+                },
+                'document-type-select': {
+                    operator: 'TypeOfDocumentFacet',
+                    formulaId: 'document-type-formula'
+                },
+                'support-select': {
+                    operator: 'ZMATFacet',
+                    formulaId: 'support-formula'
+                },
+                'categorie-select': {
+                    operator: 'StockCategoryCode',
+                    formulaId: 'categorie-formula',
+                    isCode: true // Pour extraire seulement le code (2 premières lettres)
+                },
+                'localisation-select': {
+                    operator: 'StockSublocationCode',
+                    formulaId: 'localisation-formula',
+                    isCode: true // Pour extraire seulement le code
+                }
+            };
+
+            // Fonction pour extraire le code d'une option
+            function extractCode(value) {
+                // Pour les catégories comme "AL Album", on prend les 2 premières lettres
+                if (value && value.length >= 2) {
+                    const match = value.match(/^([A-Z0-9]{1,4})/);
+                    return match ? match[1] : value.split(' ')[0];
+                }
+                return value;
+            }
+
+            // Fonction pour créer une formule de recherche
+            function createFormula(operator, value, isCode = false) {
+                let searchValue = value;
+                
+                if (isCode) {
+                    searchValue = extractCode(value);
+                }
+                
+                // Si la valeur contient des espaces, on l'entoure de guillemets
+                if (searchValue && searchValue.includes(' ')) {
+                    return `${operator}:"${searchValue}"`;
+                }
+                
+                return `${operator}:${searchValue}`;
+            }
+
+            // Gestionnaire d'événements pour tous les sélecteurs
+            Object.keys(selectConfig).forEach(selectId => {
+                const select = document.getElementById(selectId);
+                const config = selectConfig[selectId];
+                const formulaContainer = document.getElementById(config.formulaId);
+                
+                if (select && formulaContainer) {
+                    select.addEventListener('change', function() {
+                        const formulaElement = formulaContainer.querySelector('.formula');
+                        const copyBtn = formulaContainer.querySelector('.copy-btn');
+                        
+                        if (this.value) {
+                            const formula = createFormula(config.operator, this.value, config.isCode);
+                            formulaElement.textContent = formula;
+                            formulaContainer.style.display = 'block';
+                            
+                            // Mettre à jour l'événement de copie
+                            copyBtn.onclick = function() {
+                                navigator.clipboard.writeText(formula).then(() => {
+                                    const originalText = copyBtn.textContent;
+                                    copyBtn.textContent = 'Copié !';
+                                    copyBtn.style.backgroundColor = '#2ecc71';
+                                    
+                                    setTimeout(() => {
+                                        copyBtn.textContent = originalText;
+                                        copyBtn.style.backgroundColor = '';
+                                    }, 1500);
+                                });
+                            };
+                        } else {
+                            formulaContainer.style.display = 'none';
+                        }
+                    });
+                }
+            });
+
+            // Effet de surlignage au survol des lignes
+            const rows = document.querySelectorAll('tbody tr');
+            rows.forEach(row => {
+                row.addEventListener('mouseenter', function() {
+                    this.style.transition = 'background-color 0.3s ease';
+                });
+            });
+            
+            // Copie des exemples existants
+            const examples = document.querySelectorAll('.example');
+            examples.forEach(example => {
+                example.addEventListener('click', function() {
+                    const textToCopy = this.textContent.trim();
+                    navigator.clipboard.writeText(textToCopy).then(() => {
+                        const originalText = this.textContent;
+                        const originalBg = this.style.backgroundColor;
+                        const originalColor = this.style.color;
+                        
+                        this.textContent = 'Copié !';
+                        this.style.backgroundColor = '#2ecc71';
+                        this.style.color = 'white';
+                        
+                        setTimeout(() => {
+                            this.textContent = originalText;
+                            this.style.backgroundColor = originalBg;
+                            this.style.color = originalColor;
+                        }, 1500);
+                    });
+                });
+                
+                example.style.cursor = 'pointer';
+                example.title = 'Cliquez pour copier';
+            });
+            
+            // Initialisation : cacher tous les conteneurs de formule
+            Object.keys(selectConfig).forEach(selectId => {
+                const config = selectConfig[selectId];
+                const formulaContainer = document.getElementById(config.formulaId);
+                if (formulaContainer) {
+                    formulaContainer.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
