@@ -89,7 +89,7 @@ if($("#div0").length==0){
 				var ark0=$(this).attr("href");
 				var ark1=$(this).attr("title");
 				if(~ark0.indexOf("/notice?id=p%3A%3Ausmarcdef_")){
-					if(origin=="https://mediatheque-rueilmalmaison.fr"){ark0=ark0.slice(28);}else{ark0=ark0.slice(65);}
+					if(origin=="https://wwww.mediatheque-rueilmalmaison.fr"){ark0=ark0.slice(28);}else{ark0=ark0.slice(69);}
 					ark0=ark0.substring(0,10);
 					ark1=ark1.substring(0,25);
 					ark1=ark1.replace('"','\"');
