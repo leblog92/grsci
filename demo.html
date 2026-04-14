@@ -1,13 +1,17 @@
-<!document HTML>
+<!DOCTYPE html>
 <html lang="fr">
 	<head>
 		<meta charset="UTF-8">
 		<title>Catalogue</title>
 		<link rel="icon" type="image/png" href="backhand.png"/>
-		<script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+		<style>
+			#grsci-div0 { right: -320px; }
+			#grsci-div1 { left: -320px; }
+			#grsci-btn-hide, #grsci-btn-count, #grsci-btn-reset, #grsci-btn-export { bottom: -60px; }
+		</style>
 	</head>
 	<body>
-		<div style="text-align:center;font-family;font-family:Consolas">
+		<div style="text-align:center;font-family:Consolas">
 			<br><br><h3>Résultats de recherche</h3><br>
 			<a href="https://www.mediatheque-rueilmalmaison.fr/notice?id=p%3A%3Ausmarcdef_0000386268&posInSet=3&queryId=d171d920-6645-4d99-9679-90f8139d3593" title="Cette nuit-là / Aurélie Masse">Lien document n°1</a><br><br>
 			<a href="https://www.mediatheque-rueilmalmaison.fr/notice?id=p%3A%3Ausmarcdef_0000322821&posInSet=2&queryId=b78a8fb8-dba0-49b4-ae4f-d501455d352e" title="Seul, invaincu / Loïc Merle">Lien document n°2</a><br><br>
@@ -16,5 +20,20 @@
 			<a href="index.html">Retour</a> - <a href="https://mediatheque-rueilmalmaison.fr/">Catalogue</a>
 		</div>
 		<script src="grsci.js"></script>
+		<script>
+			// Animate panels in after script loads
+			requestAnimationFrame(function() {
+				requestAnimationFrame(function() {
+					var d0 = document.getElementById('grsci-div0');
+					var d1 = document.getElementById('grsci-div1');
+					var bh = document.getElementById('grsci-btn-hide');
+					var bc = document.getElementById('grsci-btn-count');
+					if(d0) d0.style.right = '0';
+					if(d1) d1.style.left  = '0';
+					if(bh) bh.style.bottom = '0';
+					if(bc) bc.style.bottom = '0';
+				});
+			});
+		</script>
 	</body>
 </html>

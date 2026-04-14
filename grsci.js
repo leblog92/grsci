@@ -1,6 +1,6 @@
 (function(){
 if(document.getElementById('grsci-div0'))return;
-var items=[],nextId=1,shown=true,originalTitle=document.title,dragSrcId=null;
+var items=[],nextId=1,shown=true,originalTitle=document.title,dragSrcId=null,virgin=true;
 
 var style=document.createElement('style');
 style.textContent='@import url(https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap);'
@@ -8,10 +8,10 @@ style.textContent='@import url(https://fonts.googleapis.com/css2?family=Roboto+M
 +'#grsci-div0{top:40px;width:270px;right:0;}'
 +'#grsci-div1{top:40px;width:270px;left:0;max-height:70vh;overflow-y:auto;scrollbar-width:none;}'
 +'#grsci-div1::-webkit-scrollbar{display:none;}'
-+'.grsci-bar{position:fixed;z-index:10000;bottom:0;font-family:Roboto Mono,monospace;background:rgba(0,129,178,1);color:#fff;border-radius:6px 6px 0 0;padding:6px 10px;cursor:pointer;user-select:none;font-size:13px;transition:.4s;box-shadow:0 -2px 6px rgba(0,0,0,.15);}'
-+'#grsci-btn-hide{right:0;}'
-+'#grsci-btn-reset{right:70px;background:#c72c48;}'
-+'#grsci-btn-count{left:0;cursor:default;}'
++'.grsci-bar{position:fixed;z-index:10000;bottom:0;font-family:Roboto Mono,monospace;background:rgba(0,129,178,1);color:#fff;border-radius:6px 6px 0 0;padding:6px 10px;cursor:pointer;user-select:none;font-size:13px;transition:bottom .4s,opacity .4s;box-shadow:0 -2px 6px rgba(0,0,0,.15);}'
++'#grsci-btn-hide{right:10px;}'
++'#grsci-btn-reset{right:71px;background:#c72c48;}'
++'#grsci-btn-count{left:10px;cursor:default;}'
 +'#grsci-btn-export{right:140px;background:#1a7a4a;}'
 +'.grsci-bar:hover{filter:brightness(1.15);}'
 +'#grsci-div0 h3{margin:0 0 6px;font-size:15px;}'
@@ -34,7 +34,8 @@ style.textContent='@import url(https://fonts.googleapis.com/css2?family=Roboto+M
 +'.grsci-token{transition:background .2s;border-radius:2px;padding:0 1px;cursor:pointer;}'
 +'.grsci-token:hover{background:rgba(255,255,255,.4);}'
 +'.grsci-hidden-right{right:-320px!important;}'
-+'.grsci-hidden-left{left:-320px!important;}';
++'.grsci-hidden-left{left:-320px!important;}'
++'.grsci-bar-hidden{bottom:-60px!important;}';
 document.head.appendChild(style);
 
 function mk(tag,props){
@@ -87,7 +88,17 @@ var toast    =mk('div',{id:'grsci-copy-toast',text:'\u2713 Requ\u00eate copi\u00
 
 [div0,div1,btnHide,btnReset,btnCount,btnExport,toast].forEach(function(e){document.body.appendChild(e);});
 
-function getQuery(){
+var quotes=[
+  ['Ce ne sont pas ces documents que vous recherchez.','Obi-Wan Kenobi'],
+  ['\u00c9chouer, c\'est avoir la possibilit\u00e9 de recommencer de mani\u00e8re plus intelligente.','Henry Ford'],
+  ['Better by far you should forget and smile.','Christina Rossetti'],
+  ['Un document de perdu, dix de retrouv\u00e9s.','Proverbe biblioth\u00e9caire']
+];
+function randomQuote(){
+  var q=quotes[Math.floor(Math.random()*quotes.length)];
+  return {text:'\u201c'+q[0]+'\u201d',author:'\u2014 '+q[1]};
+}
+
   return items.map(function(it,i){return(i===0?'':' OR ')+'LocalNumber:'+it.localNumber;}).join('');
 }
 function updateTitle(){
@@ -102,8 +113,18 @@ function render(){
   // Query panel
   while(qDiv.firstChild)qDiv.removeChild(qDiv.firstChild);
   if(n===0){
-    var em=mk('em',{style:'opacity:.6',text:'Aucun document s\u00e9lectionn\u00e9.'});
-    ap(qDiv,em);
+    if(virgin){
+      ap(qDiv,mk('em',{style:'opacity:.6',text:'Aucun document s\u00e9lectionn\u00e9.'}));
+      ap(listDiv,mk('div',{'class':'grsci-empty',text:'Survolez un titre sur le catalogue\u2026'}));
+    } else {
+      var q=randomQuote();
+      ap(qDiv,mk('em',{style:'opacity:.8',text:q.text}));
+      ap(qDiv,mk('br'));
+      ap(qDiv,mk('span',{style:'opacity:.6;font-size:11px',text:q.author}));
+      var q2=randomQuote();
+      ap(listDiv,mk('div',{'class':'grsci-empty',text:q2.text}));
+      ap(listDiv,mk('div',{style:'font-size:11px;opacity:.6;text-align:right',text:q2.author}));
+    }
   } else {
     for(var i=0;i<items.length;i++){
       if(i>0){
@@ -117,8 +138,6 @@ function render(){
 
   // Title list
   while(listDiv.firstChild)listDiv.removeChild(listDiv.firstChild);
-  if(n===0){
-    ap(listDiv,mk('div',{'class':'grsci-empty',text:'Survolez un titre sur le catalogue\u2026'}));
   } else {
     for(var j=0;j<items.length;j++){
       var it=items[j];
@@ -133,8 +152,8 @@ function render(){
     setupDrag();
   }
 
-  btnReset.style.display=n>0?'':'none';
-  btnExport.style.display=n>0?'':'none';
+  btnReset.classList.toggle('grsci-bar-hidden', n===0);
+  btnExport.classList.toggle('grsci-bar-hidden', n===0);
 }
 
 function setupDrag(){
@@ -200,7 +219,7 @@ btnExport.addEventListener('click',function(){
   if(!items.length)return;
   var lines=['GRSCI\u2122 v8 \u2014 Export s\u00e9lection','========================================',''];
   for(var i=0;i<items.length;i++){
-    lines.push((i+1)+'. '+items[i].title);
+    lines.push((i+1)+'. '+items[i].fullTitle);
     lines.push('   LocalNumber:'+items[i].localNumber);
     lines.push('');
   }
@@ -236,7 +255,7 @@ btnHide.addEventListener('click',function(){
   div1.classList.toggle('grsci-hidden-left',!shown);
   btnHide.textContent=shown?'Hide':'Show';
   btnHide.style.opacity=shown?'1':'0.5';
-  if(!shown){btnReset.style.display='none';btnExport.style.display='none';}
+  if(!shown){btnReset.classList.add('grsci-bar-hidden');btnExport.classList.add('grsci-bar-hidden');}
   else render();
 });
 
@@ -255,13 +274,15 @@ document.addEventListener('mouseenter',function(e){
     localNum=localNum.slice(69);
   }
   localNum=localNum.substring(0,10);
+  var fullTitle=title.substring(0,120);
   title=title.substring(0,40);
   for(var k=0;k<items.length;k++){if(items[k].localNumber===localNum)return;}
-  items.push({id:nextId++,localNumber:localNum,title:title});
+  items.push({id:nextId++,localNumber:localNum,title:title,fullTitle:fullTitle});
+  virgin=false;
   render();
 },true);
 
 render();
-btnReset.style.display='none';
-btnExport.style.display='none';
+btnReset.classList.add('grsci-bar-hidden');
+btnExport.classList.add('grsci-bar-hidden');
 })();
