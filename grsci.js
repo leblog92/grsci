@@ -9,10 +9,10 @@ style.textContent='@import url(https://fonts.googleapis.com/css2?family=Roboto+M
 +'#grsci-div1{top:40px;width:270px;left:0;max-height:70vh;overflow-y:auto;scrollbar-width:none;}'
 +'#grsci-div1::-webkit-scrollbar{display:none;}'
 +'.grsci-bar{position:fixed;z-index:10000;bottom:0;font-family:Roboto Mono,monospace;background:rgba(0,129,178,1);color:#fff;border-radius:6px 6px 0 0;padding:6px 10px;cursor:pointer;user-select:none;font-size:13px;transition:.4s;box-shadow:0 -2px 6px rgba(0,0,0,.15);}'
-+'#grsci-btn-hide{right:0;}'
-+'#grsci-btn-reset{right:70px;background:#c72c48;}'
-+'#grsci-btn-count{left:0;cursor:default;}'
-+'#grsci-btn-export{right:140px;background:#1a7a4a;}'
++'#grsci-btn-hide{right:10px;}'
++'#grsci-btn-reset{right:81px;background:#c72c48;}'
++'#grsci-btn-count{left:10px;cursor:default;}'
++'#grsci-btn-export{right:152px;background:#1a7a4a;}'
 +'.grsci-bar:hover{filter:brightness(1.15);}'
 +'#grsci-div0 h3{margin:0 0 6px;font-size:15px;}'
 +'#grsci-div0 hr{border:none;border-top:.5px solid rgba(255,255,255,.4);margin:6px 0;}'
@@ -34,7 +34,7 @@ style.textContent='@import url(https://fonts.googleapis.com/css2?family=Roboto+M
 +'.grsci-token{transition:background .2s;border-radius:2px;padding:0 1px;cursor:pointer;}'
 +'.grsci-token:hover{background:rgba(255,255,255,.4);}'
 +'.grsci-hidden-right{right:-320px!important;}'
-+'.grsci-hidden-left{left:-320px!important;}';
++'.grsci-bar-off{bottom:-60px!important;}'
 document.head.appendChild(style);
 
 function mk(tag,props){
@@ -122,8 +122,8 @@ function render(){
     setupDrag();
   }
 
-  btnReset.style.display=n>0?'':'none';
-  btnExport.style.display=n>0?'':'none';
+  btnReset.classList.toggle('grsci-bar-off', n===0);
+  btnExport.classList.toggle('grsci-bar-off', n===0);
 }
 
 function setupDrag(){
@@ -224,7 +224,7 @@ btnHide.addEventListener('click',function(){
   div1.classList.toggle('grsci-hidden-left',!shown);
   btnHide.textContent=shown?'Hide':'Show';
   btnHide.style.opacity=shown?'1':'0.5';
-  if(!shown){btnReset.style.display='none';btnExport.style.display='none';}
+  if(!shown){btnReset.classList.add('grsci-bar-off');btnExport.classList.add('grsci-bar-off');}
   else render();
 });
 
@@ -250,6 +250,6 @@ document.addEventListener('mouseenter',function(e){
 },true);
 
 render();
-btnReset.style.display='none';
-btnExport.style.display='none';
+btnReset.classList.add('grsci-bar-off');
+btnExport.classList.add('grsci-bar-off');
 })();
