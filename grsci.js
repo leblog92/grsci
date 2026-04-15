@@ -10,7 +10,7 @@ style.textContent='@import url(https://fonts.googleapis.com/css2?family=Roboto+M
 +'#grsci-div1::-webkit-scrollbar{display:none;}'
 +'.grsci-bar{position:fixed;z-index:10000;bottom:0;font-family:Roboto Mono,monospace;background:rgba(0,129,178,1);color:#fff;border-radius:6px 6px 0 0;padding:6px 10px;cursor:pointer;user-select:none;font-size:13px;transition:.4s;box-shadow:0 -2px 6px rgba(0,0,0,.15);}'
 +'#grsci-btn-hide{right:10px;}'
-+'#grsci-btn-reset{right:81px;background:#c72c48;}'
++'#grsci-btn-reset{right:78px;background:#c72c48;}'
 +'#grsci-btn-count{left:10px;cursor:default;}'
 +'#grsci-btn-export{right:152px;background:#1a7a4a;}'
 +'.grsci-bar:hover{filter:brightness(1.15);}'
