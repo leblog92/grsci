@@ -1,39 +1,213 @@
 <!DOCTYPE html>
 <html lang="fr">
-	<head>
-		<meta charset="UTF-8">
-		<title>Catalogue</title>
-		<link rel="icon" type="image/png" href="backhand.png"/>
-		<style>
-			#grsci-div0 { right: -320px; }
-			#grsci-div1 { left: -320px; }
-			#grsci-btn-hide, #grsci-btn-count, #grsci-btn-reset, #grsci-btn-export { bottom: -60px; }
-		</style>
-	</head>
-	<body>
-		<div style="text-align:center;font-family:Consolas">
-			<br><br><h3>Résultats de recherche</h3><br>
-			<a href="https://www.mediatheque-rueilmalmaison.fr/notice?id=p%3A%3Ausmarcdef_0000386268&posInSet=3&queryId=d171d920-6645-4d99-9679-90f8139d3593" title="Cette nuit-là / Aurélie Masse">Lien document n°1</a><br><br>
-			<a href="https://www.mediatheque-rueilmalmaison.fr/notice?id=p%3A%3Ausmarcdef_0000322821&posInSet=2&queryId=b78a8fb8-dba0-49b4-ae4f-d501455d352e" title="Seul, invaincu / Loïc Merle">Lien document n°2</a><br><br>
-			<a href="https://www.mediatheque-rueilmalmaison.fr/notice?id=p%3A%3Ausmarcdef_0000391621&posInSet=6&queryId=468cbe5e-e1c5-4f0b-8bc5-8e718aa006a2" title="Nice secret et insolite : Les trésors cachés de la Baie des Anges / Charles Bilas ; Thomas Bilanges">Lien document n°3</a><br><br>
-			<a href="https://www.mediatheque-rueilmalmaison.fr/notice?id=p%3A%3Ausmarcdef_0000400050&posInSet=4&queryId=9a2935d1-e176-4769-aa8d-5b16ee559ab0" title="Les sept soeurs. 7 La soeur disparue [Texte imprimé] / Lucinda Riley ; traduit de l'anglais par Typhaine Ducellier et Elisabeth Luc">Lien document n°4</a><br><br><br>
-			<a href="index.html">Retour</a> - <a href="https://www.mediatheque-rueilmalmaison.fr/">Catalogue</a>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Catalogue — Résultats de recherche</title>
+	<link rel="icon" type="image/png" href="backhand.png"/>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+	<style>
+		*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+		body { font-family: 'Source Sans 3', sans-serif; background: #f2f4f7; color: #1a1a2e; min-height: 100vh; }
+
+		.site-header { background: #0081B2; padding: 0 32px; display: flex; align-items: center; justify-content: space-between; height: 56px; box-shadow: 0 2px 8px rgba(0,0,0,.18); }
+		.site-header .logo { font-family: 'Source Serif 4', serif; font-size: 18px; font-weight: 600; color: white; text-decoration: none; letter-spacing: .3px; }
+		.site-header .logo span { font-weight: 400; opacity: .8; font-size: 13px; margin-left: 10px; }
+		.header-nav { display: flex; gap: 8px; }
+		.header-nav a { color: rgba(255,255,255,.85); text-decoration: none; font-size: 13px; padding: 6px 12px; border-radius: 4px; transition: background .2s; }
+		.header-nav a:hover { background: rgba(255,255,255,.15); }
+
+		.search-bar { background: #fff; border-bottom: 1px solid #dde2e8; padding: 14px 32px; display: flex; align-items: center; gap: 12px; }
+		.search-input-wrap { display: flex; flex: 1; max-width: 560px; border: 1.5px solid #b0bec5; border-radius: 6px; overflow: hidden; transition: border-color .2s; }
+		.search-input-wrap:focus-within { border-color: #0081B2; }
+		.search-input-wrap input { flex: 1; border: none; outline: none; padding: 8px 14px; font-family: inherit; font-size: 14px; color: #1a1a2e; }
+		.search-input-wrap button { background: #0081B2; border: none; color: white; padding: 0 18px; cursor: pointer; font-size: 16px; transition: background .2s; }
+		.search-input-wrap button:hover { background: #006a94; }
+		.search-label { font-size: 13px; color: #607d8b; }
+
+		.main { max-width: 1000px; margin: 0 auto; padding: 28px 24px; }
+
+		.results-header { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 18px; }
+		.results-title { font-family: 'Source Serif 4', serif; font-size: 20px; font-weight: 600; color: #1a1a2e; }
+		.results-count { font-size: 13px; color: #607d8b; background: #e8edf2; padding: 3px 10px; border-radius: 20px; }
+
+		.sort-bar { display: flex; align-items: center; gap: 8px; margin-bottom: 16px; font-size: 13px; color: #607d8b; }
+		.sort-bar select { border: 1px solid #dde2e8; border-radius: 4px; padding: 4px 8px; font-size: 13px; color: #1a1a2e; background: white; cursor: pointer; }
+
+		.results-list { display: flex; flex-direction: column; gap: 12px; }
+		.doc-card { background: white; border: 1px solid #dde2e8; border-radius: 8px; display: flex; overflow: hidden; transition: box-shadow .2s, border-color .2s; cursor: pointer; }
+		.doc-card:hover { box-shadow: 0 4px 16px rgba(0,129,178,.12); border-color: #0081B2; }
+
+		.doc-cover { width: 72px; min-height: 100px; background: #e8edf2; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 28px; color: #90a4ae; border-right: 1px solid #dde2e8; }
+		.doc-cover.c1 { background: #e3f2fd; }
+		.doc-cover.c2 { background: #fce4ec; }
+		.doc-cover.c3 { background: #e8f5e9; }
+		.doc-cover.c4 { background: #ede7f6; }
+
+		.doc-body { flex: 1; padding: 14px 18px; display: flex; flex-direction: column; gap: 5px; }
+		.doc-type { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .8px; color: #0081B2; }
+		.doc-title a { font-family: 'Source Serif 4', serif; font-size: 16px; font-weight: 600; color: #0081B2; text-decoration: none; line-height: 1.3; transition: color .2s; }
+		.doc-title a:hover { text-decoration: underline; }
+		.doc-subtitle { font-family: 'Source Serif 4', serif; font-style: italic; font-size: 13px; color: #546e7a; }
+		.doc-author { font-size: 13px; color: #37474f; }
+		.doc-meta { display: flex; gap: 14px; flex-wrap: wrap; font-size: 12px; color: #78909c; margin-top: 4px; }
+		.doc-availability { align-self: flex-start; margin-top: 6px; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 10px; }
+		.dispo    { background: #e8f5e9; color: #2e7d32; }
+		.emprunte { background: #fff3e0; color: #e65100; }
+
+		.pagination { display: flex; justify-content: center; align-items: center; gap: 6px; margin-top: 32px; }
+		.page-btn { width: 34px; height: 34px; border: 1px solid #dde2e8; background: white; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 13px; color: #37474f; cursor: pointer; transition: all .2s; text-decoration: none; }
+		.page-btn.active { background: #0081B2; color: white; border-color: #0081B2; font-weight: 700; }
+		.page-btn:hover:not(.active) { border-color: #0081B2; color: #0081B2; }
+
+		.site-footer { margin-top: 48px; border-top: 1px solid #dde2e8; padding: 18px 32px; text-align: center; font-size: 12px; color: #90a4ae; background: white; }
+		.site-footer a { color: #0081B2; text-decoration: none; }
+
+		#grsci-div0 { right: -320px; }
+		#grsci-div1 { left: -320px; }
+		#grsci-btn-hide, #grsci-btn-count, #grsci-btn-reset, #grsci-btn-export { bottom: -60px; }
+	</style>
+</head>
+<body>
+
+<header class="site-header">
+	<a class="logo" href="index.html">
+		Médiathèque de Rueil-Malmaison
+		<span>Catalogue InMedia</span>
+	</a>
+	<nav class="header-nav">
+		<a href="index.html">&#127968; Accueil</a>
+		<a href="https://www.mediatheque-rueilmalmaison.fr/" target="_blank">Catalogue réel &#8599;</a>
+	</nav>
+</header>
+
+<div class="search-bar">
+	<div class="search-input-wrap">
+		<input type="text" value="roman contemporain" readonly>
+		<button>&#128269;</button>
+	</div>
+	<span class="search-label">Recherche dans tous les documents</span>
+</div>
+
+<main class="main">
+	<div class="results-header">
+		<h1 class="results-title">Résultats de recherche</h1>
+		<span class="results-count">4 documents trouvés</span>
+	</div>
+
+	<div class="sort-bar">
+		Trier par :
+		<select><option>Pertinence</option><option>Titre A→Z</option><option>Date</option></select>
+	</div>
+
+	<div class="results-list">
+
+		<div class="doc-card">
+			<div class="doc-cover c1">📖</div>
+			<div class="doc-body">
+				<div class="doc-type">Roman</div>
+				<div class="doc-title">
+					<a href="https://www.mediatheque-rueilmalmaison.fr/notice?id=p%3A%3Ausmarcdef_0000386268&posInSet=3&queryId=d171d920-6645-4d99-9679-90f8139d3593"
+					   title="Cette nuit-là / Aurélie Masse">Cette nuit-là</a>
+				</div>
+				<div class="doc-author">Aurélie Masse</div>
+				<div class="doc-meta">
+					<span>📅 2023</span>
+					<span>🏛 Médiathèque Baumel</span>
+					<span>📚 Cote : MAS</span>
+				</div>
+				<span class="doc-availability dispo">Disponible</span>
+			</div>
 		</div>
-		<script src="grsci.js"></script>
-		<script>
-			// Animate panels in after script loads
-			requestAnimationFrame(function() {
-				requestAnimationFrame(function() {
-					var d0 = document.getElementById('grsci-div0');
-					var d1 = document.getElementById('grsci-div1');
-					var bh = document.getElementById('grsci-btn-hide');
-					var bc = document.getElementById('grsci-btn-count');
-					if(d0) d0.style.right = '0';
-					if(d1) d1.style.left  = '0';
-					if(bh) bh.style.bottom = '0';
-					if(bc) bc.style.bottom = '0';
-				});
-			});
-		</script>
-	</body>
+
+		<div class="doc-card">
+			<div class="doc-cover c2">📖</div>
+			<div class="doc-body">
+				<div class="doc-type">Roman</div>
+				<div class="doc-title">
+					<a href="https://www.mediatheque-rueilmalmaison.fr/notice?id=p%3A%3Ausmarcdef_0000322821&posInSet=2&queryId=b78a8fb8-dba0-49b4-ae4f-d501455d352e"
+					   title="Seul, invaincu / Loïc Merle">Seul, invaincu</a>
+				</div>
+				<div class="doc-author">Loïc Merle</div>
+				<div class="doc-meta">
+					<span>📅 2021</span>
+					<span>🏛 Médiathèque Baumel</span>
+					<span>📚 Cote : MER</span>
+				</div>
+				<span class="doc-availability emprunte">Emprunté</span>
+			</div>
+		</div>
+
+		<div class="doc-card">
+			<div class="doc-cover c3">🗺️</div>
+			<div class="doc-body">
+				<div class="doc-type">Guide</div>
+				<div class="doc-title">
+					<a href="https://www.mediatheque-rueilmalmaison.fr/notice?id=p%3A%3Ausmarcdef_0000391621&posInSet=6&queryId=468cbe5e-e1c5-4f0b-8bc5-8e718aa006a2"
+					   title="Nice secret et insolite : Les trésors cachés de la Baie des Anges / Charles Bilas ; Thomas Bilanges">Nice secret et insolite</a>
+				</div>
+				<div class="doc-subtitle">Les trésors cachés de la Baie des Anges</div>
+				<div class="doc-author">Charles Bilas ; Thomas Bilanges</div>
+				<div class="doc-meta">
+					<span>📅 2022</span>
+					<span>🏛 Médiathèque Baumel</span>
+					<span>📚 Cote : 914 BIL</span>
+				</div>
+				<span class="doc-availability dispo">Disponible</span>
+			</div>
+		</div>
+
+		<div class="doc-card">
+			<div class="doc-cover c4">📖</div>
+			<div class="doc-body">
+				<div class="doc-type">Roman</div>
+				<div class="doc-title">
+					<a href="https://www.mediatheque-rueilmalmaison.fr/notice?id=p%3A%3Ausmarcdef_0000400050&posInSet=4&queryId=9a2935d1-e176-4769-aa8d-5b16ee559ab0"
+					   title="Les sept soeurs. 7 La soeur disparue [Texte imprimé] / Lucinda Riley ; traduit de l'anglais par Typhaine Ducellier et Elisabeth Luc">Les sept sœurs — 7. La sœur disparue</a>
+				</div>
+				<div class="doc-author">Lucinda Riley <span style="color:#90a4ae;font-size:11px;">trad. Typhaine Ducellier, Elisabeth Luc</span></div>
+				<div class="doc-meta">
+					<span>📅 2023</span>
+					<span>🏛 Médiathèque Baumel</span>
+					<span>📚 Cote : RIL</span>
+				</div>
+				<span class="doc-availability dispo">Disponible</span>
+			</div>
+		</div>
+
+	</div>
+
+	<div class="pagination">
+		<a class="page-btn">&#8249;</a>
+		<a class="page-btn active">1</a>
+		<a class="page-btn">2</a>
+		<a class="page-btn">3</a>
+		<a class="page-btn">&#8250;</a>
+	</div>
+</main>
+
+<footer class="site-footer">
+	<a href="index.html">&#128073; GRSCI&#8482; — Retour à l'accueil</a>
+	&nbsp;·&nbsp;
+	<a href="https://www.mediatheque-rueilmalmaison.fr/" target="_blank">Catalogue InMedia réel</a>
+</footer>
+
+<script src="grsci.js"></script>
+<script>
+	requestAnimationFrame(function() {
+		requestAnimationFrame(function() {
+			var d0 = document.getElementById('grsci-div0');
+			var d1 = document.getElementById('grsci-div1');
+			var bh = document.getElementById('grsci-btn-hide');
+			var bc = document.getElementById('grsci-btn-count');
+			if(d0) d0.style.right = '0';
+			if(d1) d1.style.left  = '0';
+			if(bh) bh.style.bottom = '0';
+			if(bc) bc.style.bottom = '0';
+		});
+	});
+</script>
+
+</body>
 </html>
